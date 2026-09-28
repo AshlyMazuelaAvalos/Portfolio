@@ -1,0 +1,49 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-family: inherit;
+  font-size: var(--font-clickable, 0.875rem);
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+}
+
+.btn.primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: 1px solid transparent;
+}
+
+.btn.primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Variante Secundaria / Outline */
+.btn.secondary,
+.btn.outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: var(--border-card);
+}
+
+.btn.secondary:hover,
+.btn.outline:hover {
+  background-color: var(--bg-surface);
+}
+
+/* Enfoque accesible */
+.btn:focus-visible {
+  outline: 2px solid var(--border-subtle);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

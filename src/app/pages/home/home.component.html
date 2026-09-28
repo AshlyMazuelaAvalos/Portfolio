@@ -1,0 +1,63 @@
+<main class="home-page">
+  <nav class="topbar" aria-label="Navegación principal">
+    <div class="brand">Ashly</div>
+    <div class="nav-links">
+      <a href="#about">Sobre mí</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#stack">Stack</a>
+      <a href="#contact">Contacto</a>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">{{ greeting }}</p>
+      <h1>{{ title }}</h1>
+      <h2>{{ subtitle }}</h2>
+      <p class="description">
+        Construyo experiencias web modernas, limpias y centradas en el usuario.
+      </p>
+      <div class="actions">
+        <a class="primary" href="#projects">{{ ctaText }}</a>
+        <a class="secondary" href="#contact">Hablemos</a>
+      </div>
+    </div>
+
+    <div class="hero-card" aria-label="Perfil profesional">
+      <div class="avatar">A</div>
+      <div class="card-content">
+        <span>Disponible para proyectos</span>
+        <strong>Frontend Developer</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" aria-label="Estadísticas">
+    @for (item of stats; track item.label) {
+      <article class="stat-item">
+        <strong>{{ item.value }}</strong>
+        <span>{{ item.label }}</span>
+      </article>
+    }
+  </section>
+
+  <section id="about" class="section">
+    <h3>Sobre mí</h3>
+    <p>Me apasiona crear interfaces que combinen diseño, accesibilidad y experiencia de usuario.</p>
+  </section>
+
+  <section id="projects" class="section">
+    <h3>Proyectos</h3>
+    <p>Aquí irán tus trabajos destacados.</p>
+  </section>
+
+  <section id="stack" class="section">
+    <h3>Stack</h3>
+    <p>Angular, TypeScript, HTML, CSS, JavaScript y más.</p>
+  </section>
+
+  <section id="contact" class="section">
+    <h3>Contacto</h3>
+    <p>ashly@email.com</p>
+  </section>
+</main>

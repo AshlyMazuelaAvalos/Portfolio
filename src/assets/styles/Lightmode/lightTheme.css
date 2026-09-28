@@ -1,0 +1,14 @@
+[data-theme='light'] {
+  --bg-canvas: var(--color-slate-50);
+  --bg-surface: var(--color-navy-dark);
+  --border-subtle: var(--color-slate-300);
+  --border-card: 1px solid var(--color-slate-300);
+  --text-primary: var(--color-black-night);
+  --text-secondary: var(--color-navy-dark);
+  --btn-primary-bg: var(--color-mauve-primary);
+  --btn-primary-text: var(--color-white);
+  --chip-bg: var(--color-navy-dark);
+  --chip-border: var(--color-indigo-subtle);
+  --chip-text: var(--color-slate-50);
+  --link-decoration: none;
+}

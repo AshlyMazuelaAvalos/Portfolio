@@ -1,0 +1,10 @@
+<button
+  [type]="type()"
+  [disabled]="disabled()"
+  [class]="'btn ' + variant()"
+  [attr.aria-label]="ariaLabel() || null"
+  (click)="handleClick($event)"
+>
+  <!-- <ng-content> permite proyectar texto, iconos SVG o lo que pongas dentro -->
+  <ng-content></ng-content>
+</button>

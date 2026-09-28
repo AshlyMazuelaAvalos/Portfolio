@@ -1,0 +1,140 @@
+<header class="navbar-wrapper">
+  <nav class="navbar-container">
+    <!-- Logo / Identidad -->
+    <a href="#hero" class="brand-link">
+      <img src="/assets/icons/favicon.svg" alt="" class="brand-logo" />
+      <div class="brand-text">
+        <span class="brand-name">ASHLY MAZUELA</span>
+        <span class="brand-title">Software Engineer</span>
+      </div>
+    </a>
+
+    <!-- Navegación Central (Pills) -->
+    <ul class="nav-links">
+      @for (item of navItems; track item.id) {
+        <li>
+          <button type="button" class="nav-pill">{{ item.label }}</button>
+        </li>
+      }
+    </ul>
+
+    <!-- Acciones Derecha -->
+    <div class="nav-actions">
+      <!-- DROPDOWN 1: TEMAS -->
+      <div class="menu-container">
+        <button
+          type="button"
+          class="icon-btn"
+          [class.active]="isThemeMenuOpen()"
+          (click)="toggleThemeMenu($event)"
+          title="Configuración de Tema"
+        >
+          <!-- Icono de Paleta -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 3a9 9 0 0 0 0 18c7 0 9-4 9-6.5a2.5 2.5 0 0 0-2.5-2.5h-2a1.5 1.5 0 0 1-1.5-1.5V10c0-3.86-3.14-7-7-7zm-4 8a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3-3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm2 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+            />
+          </svg>
+        </button>
+
+        @if (isThemeMenuOpen()) {
+          <div class="dropdown-popover theme-dropdown" (click)="$event.stopPropagation()">
+            <!-- Fila 1: Modo Claro/Oscuro -->
+            <label class="dropdown-row">
+              <span
+                class="switch-toggle"
+                [class.checked]="themeService.baseTheme() === 'dark'"
+                (click)="themeService.toggleBaseTheme()"
+              >
+                <span class="switch-thumb">
+                  <!-- Icono Luna/Sol -->
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                  </svg>
+                </span>
+              </span>
+              <span class="dropdown-label"
+                >Modo {{ themeService.baseTheme() === 'dark' ? 'Oscuro' : 'Claro' }}</span
+              >
+            </label>
+
+            <!-- Fila 2: Modo Daltónico -->
+            <label class="dropdown-row">
+              <span
+                class="switch-toggle"
+                [class.checked]="themeService.isColorblind()"
+                (click)="themeService.toggleColorblind()"
+              >
+                <span class="switch-thumb">
+                  <!-- Icono Ojo/Accesible -->
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </span>
+              </span>
+              <span class="dropdown-label">Daltónico</span>
+            </label>
+          </div>
+        }
+      </div>
+
+      <!-- DROPDOWN 2: IDIOMA -->
+      <div class="menu-container">
+        <button
+          type="button"
+          class="icon-btn"
+          [class.active]="isLangMenuOpen()"
+          (click)="toggleLangMenu($event)"
+          title="Seleccionar Idioma"
+        >
+          <!-- Icono Traducción 文A -->
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6" />
+          </svg>
+        </button>
+
+        @if (isLangMenuOpen()) {
+          <div class="dropdown-popover lang-dropdown" (click)="$event.stopPropagation()">
+            <button
+              type="button"
+              class="lang-option"
+              [class.selected]="currentLang() === 'es'"
+              (click)="setLanguage('es')"
+            >
+              <span class="flag-icon">🇨🇱</span>
+              <span>Español</span>
+            </button>
+            <button
+              type="button"
+              class="lang-option"
+              [class.selected]="currentLang() === 'en'"
+              (click)="setLanguage('en')"
+            >
+              <span class="flag-icon">🇬🇧</span>
+              <span>English</span>
+            </button>
+          </div>
+        }
+      </div>
+
+      <!-- Botón CV -->
+      <app-button variant="primary" (btnClick)="downloadCV()"> Descargar CV </app-button>
+    </div>
+  </nav>
+</header>

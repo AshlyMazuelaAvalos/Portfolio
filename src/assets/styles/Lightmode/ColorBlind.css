@@ -1,0 +1,22 @@
+/* styles/Lightmode/colorblind.css */
+[data-theme='light-colorblind'] {
+  --bg-canvas: var(--color-slate-100);
+  --bg-surface: var(--color-white);
+  --border-subtle: var(--color-periwinkle);
+  --border-card: 2px solid var(--color-periwinkle);
+  --text-primary: #color-slate-900;
+  --text-secondary: var(--color-navy-dark);
+  --btn-primary-bg: var(--color-purple-accessible);
+  --btn-primary-text: var(--color-white);
+  --btn-secondary-border: var(--color-navy-dark);
+  --btn-secondary-text: #color-slate-900;
+  --chip-bg: var(--color-navy-dark);
+  --chip-border: var(--color-periwinkle);
+  --chip-text: var(--color-slate-100);
+  --color-error: var(--color-red-error);
+  --link-decoration: underline;
+}
+
+[data-theme='light-colorblind'] a {
+  text-underline-offset: 4px;
+}
