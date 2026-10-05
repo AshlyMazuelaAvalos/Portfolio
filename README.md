@@ -61,6 +61,6 @@ This portfolio is designed to work with free hosting via _GitHub Pages_.
 - `npm install -g @angular/cli`: Installs all required project dependencies.
 - `npm update`: Updates all packages to the latest compatible versions.
 - `ng serve`: Launches the local development server.
-- `ng serve`: Compiles the project for production deployment.
+- `ng build`: Compiles the project for production deployment.
 
 Thanks for reading! 💫
