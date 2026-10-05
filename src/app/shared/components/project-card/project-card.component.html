@@ -1,0 +1,25 @@
+<article class="project-card">
+  @if (category(); as projectCategory) {
+    <div class="project-category">
+      @if (categoryIconUrl(); as icon) {
+        <img [src]="icon" alt="" aria-hidden="true" />
+      }
+      <span>{{ projectCategory }}</span>
+    </div>
+  }
+
+  <div class="project-copy">
+    <h3>{{ title() }}</h3>
+    <p>{{ description() }}</p>
+  </div>
+
+  @if (technologies().length > 0) {
+    <ul class="project-technologies">
+      @for (technology of technologies(); track technology.label) {
+        <li>
+          <app-stack-pill [label]="technology.label" [iconUrl]="technology.iconUrl" />
+        </li>
+      }
+    </ul>
+  }
+</article>

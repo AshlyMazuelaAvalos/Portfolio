@@ -1,40 +1,42 @@
+@reference '../../../../assets/styles/base.css'
+
+:host {
+  font-family: var(--font-sans);
+}
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.625rem 1.25rem;
+  padding: 0.525rem 1.05rem;
   font-family: inherit;
   font-size: var(--font-clickable, 0.875rem);
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
-  min-height: 44px;
+  min-height: 40px;
 }
-
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
 .btn.primary {
   background-color: var(--btn-primary-bg);
   color: var(--btn-primary-text);
   border: 1px solid transparent;
 }
 
-.btn.primary:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
 /* Variante Secundaria / Outline */
 .btn.secondary,
 .btn.outline {
-  background-color: transparent;
-  color: var(--text-primary);
-  border: var(--border-card);
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
 }
 
 .btn.secondary:hover,
 .btn.outline:hover {
-  background-color: var(--bg-surface);
+  background-color: var(--border-subtle);
 }
 
 /* Enfoque accesible */

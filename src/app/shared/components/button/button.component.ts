@@ -1,5 +1,5 @@
-import { Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, input, output } from '@angular/core';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outline';
 
@@ -11,7 +11,6 @@ export type ButtonVariant = 'primary' | 'secondary' | 'outline';
   styleUrl: './button.component.css',
 })
 export class ButtonComponent {
-  // Inputs usando signals modernas de Angular
   variant = input<ButtonVariant>('primary');
   type = input<'button' | 'submit' | 'reset'>('button');
   disabled = input<boolean>(false);

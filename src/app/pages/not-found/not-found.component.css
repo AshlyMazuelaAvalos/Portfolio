@@ -1,0 +1,27 @@
+@reference '../../../assets/styles/base.css';
+
+.not-found {
+  @apply grid min-h-[calc(100svh-68px)] place-items-center px-6 py-16 text-center;
+  color: var(--text-primary);
+  scroll-snap-align: start;
+  scroll-margin-top: 68px;
+}
+
+.message {
+  @apply flex w-full max-w-2xl flex-col items-center gap-5;
+}
+
+.error-code {
+  @apply m-0 text-7xl font-bold;
+  color: var(--btn-primary-bg);
+}
+
+.message h1 {
+  @apply m-0 text-2xl leading-relaxed;
+}
+
+.message a {
+  @apply rounded-full px-6 py-3 font-semibold no-underline transition-opacity hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-4;
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+}

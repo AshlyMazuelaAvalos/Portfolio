@@ -1,0 +1,23 @@
+@reference '../../../../assets/styles/base.css';
+
+.highlight-card {
+  @apply rounded-[1.25rem] border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-7 sm:p-8;
+  min-height: 100%;
+  background-color: var(--card-bg);
+}
+
+.card-number {
+  @apply inline-flex min-h-10 min-w-10 items-center justify-center rounded-full px-2 text-sm font-bold;
+  background: color-mix(in srgb, var(--chip-bg), transparent 82%);
+  color: var(--chip-bg);
+}
+
+.highlight-card h3 {
+  @apply mb-3 mt-6 text-xl;
+  color: var(--card-text) !important;
+}
+
+.highlight-card p {
+  @apply m-0 text-base leading-[1.8];
+  color: var(--card-text);
+}

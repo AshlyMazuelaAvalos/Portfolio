@@ -1,0 +1,62 @@
+@reference '../../../assets/styles/base.css';
+
+.about-page {
+  @apply mx-auto w-full max-w-6xl px-6 pb-20 pt-28 sm:px-10;
+  color: var(--text-primary);
+  scroll-margin-top: 68px;
+}
+
+.about-intro {
+  @apply mx-auto max-w-3xl text-center;
+}
+
+.eyebrow {
+  @apply mb-3 text-xs font-bold uppercase tracking-[0.18em];
+  color: var(--btn-primary-bg);
+}
+
+.about-intro h1 {
+  @apply m-0 text-4xl leading-tight sm:text-5xl;
+}
+
+.lead {
+  @apply mx-auto mt-5 max-w-2xl text-lg leading-relaxed sm:text-xl;
+  color: var(--text-primary);
+}
+
+.description {
+  @apply mx-auto max-w-2xl leading-7;
+  color: var(--text-secondary);
+}
+
+.focus-section {
+  @apply mt-16;
+}
+
+.focus-section > h2 {
+  @apply mb-6 text-center text-2xl;
+}
+
+.focus-grid {
+  @apply grid grid-cols-1 gap-4 md:grid-cols-3;
+}
+
+.focus-card {
+  @apply rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6;
+}
+
+.focus-number {
+  @apply inline-flex rounded-full p-2 text-sm font-bold;
+  background: color-mix(in srgb, var(--btn-primary-bg), transparent 82%);
+  color: var(--btn-primary-bg);
+}
+
+.focus-card h3 {
+  @apply mb-2 mt-5 text-lg;
+  color: var(--text-primary);
+}
+
+.focus-card p {
+  @apply m-0 leading-7;
+  color: var(--text-secondary);
+}

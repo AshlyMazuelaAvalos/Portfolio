@@ -7,8 +7,12 @@
   --text-secondary: var(--color-navy-dark);
   --btn-primary-bg: var(--color-mauve-primary);
   --btn-primary-text: var(--color-white);
+  --btn-secondary-bg: var(--color-indigo-subtle);
+  --border-subtle: var(--color-periwinkle);
   --chip-bg: var(--color-navy-dark);
   --chip-border: var(--color-indigo-subtle);
   --chip-text: var(--color-slate-50);
+  --card-bg: var(--color-indigo-subtle);
+  --card-text: var(--color-slate-900);
   --link-decoration: none;
 }

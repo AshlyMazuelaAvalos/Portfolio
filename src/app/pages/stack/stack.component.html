@@ -1,0 +1,10 @@
+<section class="content-section" id="stack" aria-labelledby="stack-title">
+  <p class="eyebrow">{{ 'nav.stack' | translate }}</p>
+  <h2 id="stack-title">{{ 'sections.stack.title' | translate }}</h2>
+  <p class="section-description">{{ 'sections.stack.description' | translate }}</p>
+  <ul class="technology-list" [attr.aria-label]="'sections.stack.technologies' | translate">
+    @for (technology of technologies; track technology) {
+      <li><app-stack-pill [label]="technology" /></li>
+    }
+  </ul>
+</section>

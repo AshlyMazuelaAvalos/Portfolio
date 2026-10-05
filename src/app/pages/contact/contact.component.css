@@ -1,0 +1,32 @@
+@reference '../../../assets/styles/base.css';
+
+.contact-section {
+  @apply mx-auto flex min-h-[60svh] w-full max-w-5xl flex-col items-center justify-center px-6 py-20 text-center sm:px-10;
+  scroll-margin-top: 68px;
+}
+
+.eyebrow {
+  @apply mb-3 text-xs font-bold uppercase tracking-[0.18em];
+  color: var(--btn-primary-bg);
+}
+
+.contact-section h2 {
+  @apply m-0 text-3xl sm:text-4xl;
+}
+
+.contact-description {
+  @apply mt-4 max-w-2xl leading-7;
+}
+
+.contact-links {
+  @apply mt-8 flex flex-wrap justify-center gap-4;
+}
+
+.contact-links a {
+  @apply inline-flex min-w-36 items-center justify-center gap-3 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-5 py-3 font-semibold no-underline transition-[transform,background-color] duration-150 hover:-translate-y-0.5 hover:bg-[var(--btn-primary-bg)] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 motion-reduce:transition-none;
+  color: var(--text-primary);
+}
+
+.contact-links svg {
+  @apply h-5 w-5 shrink-0;
+}

@@ -25,8 +25,8 @@
               },
               {
                 "glob": "**/*",
-                "input": "src/assets/icons",
-                "output": "/assets/icons/"
+                "input": "src/assets",
+                "output": "/assets/"
               }
             ],
             "styles": ["src/assets/styles/base.css"],

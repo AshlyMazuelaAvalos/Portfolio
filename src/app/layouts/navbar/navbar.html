@@ -1,19 +1,38 @@
 <header class="navbar-wrapper">
   <nav class="navbar-container">
     <!-- Logo / Identidad -->
-    <a href="#hero" class="brand-link">
-      <img src="/assets/icons/favicon.svg" alt="" class="brand-logo" />
-      <div class="brand-text">
-        <span class="brand-name">ASHLY MAZUELA</span>
-        <span class="brand-title">Software Engineer</span>
+    <!-- Bloque Brand / Identidad -->
+    <a
+      routerLink="/"
+      class="inline-flex items-center gap-2.5 no-underline shrink-0 text-[var(--color-slate-50)] hover:opacity-90 transition-opacity"
+    >
+      <!-- Logo con máscara SVG: se colorea automáticamente con el color del texto del padre -->
+      <span
+        class="w-9 h-9 shrink-0 bg-current [mask-image:url('/assets/icons/favicon.svg')] [mask-size:contain] [mask-repeat:no-repeat] [mask-position:center]"
+        aria-hidden="true"
+      ></span>
+
+      <!-- Textos de marca -->
+      <div class="flex flex-col gap-0.5 whitespace-nowrap leading-none">
+        <span class="text-[0.75rem] font-bold tracking-[0.08em] uppercase"> ASHLY MAZUELA </span>
+        <span class="text-[0.625rem] tracking-[0.04em] opacity-80">{{
+          'brand.role' | translate
+        }}</span>
       </div>
     </a>
 
-    <!-- Navegación Central (Pills) -->
-    <ul class="nav-links">
-      @for (item of navItems; track item.id) {
+      <ul class="nav-links">
+      @for (item of navItems; track item.id ?? $index) {
         <li>
-          <button type="button" class="nav-pill">{{ item.label }}</button>
+          <a
+            class="nav-pill inline-flex items-center no-underline"
+            [class.active]="activeSection() === item.id"
+            [attr.aria-current]="activeSection() === item.id ? 'location' : null"
+            [href]="'/#' + item.id"
+            (click)="navigateToSection($event, item.id)"
+          >
+            {{ item.label | translate }}
+          </a>
         </li>
       }
     </ul>
@@ -27,14 +46,10 @@
           class="icon-btn"
           [class.active]="isThemeMenuOpen()"
           (click)="toggleThemeMenu($event)"
-          title="Configuración de Tema"
+          [title]="'settings.theme' | translate"
         >
-          <!-- Icono de Paleta -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12 3a9 9 0 0 0 0 18c7 0 9-4 9-6.5a2.5 2.5 0 0 0-2.5-2.5h-2a1.5 1.5 0 0 1-1.5-1.5V10c0-3.86-3.14-7-7-7zm-4 8a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3-3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm2 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
-            />
-          </svg>
+          <!-- Ícono Paleta -->
+          <svg lucidePalette size="20"></svg>
         </button>
 
         @if (isThemeMenuOpen()) {
@@ -47,15 +62,19 @@
                 (click)="themeService.toggleBaseTheme()"
               >
                 <span class="switch-thumb">
-                  <!-- Icono Luna/Sol -->
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                  </svg>
+                  @if (themeService.baseTheme() === 'dark') {
+                    <svg lucideMoon size="12"></svg>
+                  } @else {
+                    <svg lucideSun size="12"></svg>
+                  }
                 </span>
               </span>
-              <span class="dropdown-label"
-                >Modo {{ themeService.baseTheme() === 'dark' ? 'Oscuro' : 'Claro' }}</span
-              >
+              <span class="dropdown-label">
+                {{
+                  (themeService.baseTheme() === 'dark' ? 'settings.darkMode' : 'settings.lightMode')
+                    | translate
+                }}
+              </span>
             </label>
 
             <!-- Fila 2: Modo Daltónico -->
@@ -66,21 +85,14 @@
                 (click)="themeService.toggleColorblind()"
               >
                 <span class="switch-thumb">
-                  <!-- Icono Ojo/Accesible -->
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                    <circle cx="12" cy="12" r="3" />
-                  </svg>
+                  @if (themeService.isColorblind()) {
+                    <svg lucideContrast size="12"></svg>
+                  } @else {
+                    <svg lucideEye size="12"></svg>
+                  }
                 </span>
               </span>
-              <span class="dropdown-label">Daltónico</span>
+              <span class="dropdown-label">{{ 'settings.colorBlind' | translate }}</span>
             </label>
           </div>
         }
@@ -93,20 +105,10 @@
           class="icon-btn"
           [class.active]="isLangMenuOpen()"
           (click)="toggleLangMenu($event)"
-          title="Seleccionar Idioma"
+          [title]="'settings.language' | translate"
         >
-          <!-- Icono Traducción 文A -->
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-          >
-            <path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6" />
-          </svg>
+          <!-- Ícono Traducción / Idiomas -->
+          <svg lucideLanguages size="20"></svg>
         </button>
 
         @if (isLangMenuOpen()) {
@@ -118,7 +120,7 @@
               (click)="setLanguage('es')"
             >
               <span class="flag-icon">🇨🇱</span>
-              <span>Español</span>
+              <span>{{ 'language.spanish' | translate }}</span>
             </button>
             <button
               type="button"
@@ -127,14 +129,16 @@
               (click)="setLanguage('en')"
             >
               <span class="flag-icon">🇬🇧</span>
-              <span>English</span>
+              <span>{{ 'language.english' | translate }}</span>
             </button>
           </div>
         }
       </div>
 
       <!-- Botón CV -->
-      <app-button variant="primary" (btnClick)="downloadCV()"> Descargar CV </app-button>
+      <app-button variant="primary" (btnClick)="downloadCV()">
+        {{ 'nav.downloadCv' | translate }}
+      </app-button>
     </div>
   </nav>
 </header>
