@@ -1,0 +1,199 @@
+/* ==========================================================================
+   1. FRAMEWORK & THEME IMPORTS
+   ========================================================================== */
+@import 'tailwindcss';
+
+/* Importación de esquemas de tema (Dark, Light y Colorblind) */
+@import './Darkmode/darkTheme.css';
+@import './Darkmode/ColorBlind.css';
+@import './Lightmode/lightTheme.css';
+@import './Lightmode/ColorBlind.css';
+
+/* ==========================================================================
+   2. DECLARACIÓN DE FUENTES (Andika)
+   ========================================================================== */
+@font-face {
+  font-family: 'Andika';
+  src: url('../fonts/Andika-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Andika';
+  src: url('../fonts/Andika-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Andika';
+  src: url('../fonts/Andika-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Andika';
+  src: url('../fonts/Andika-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   3. PALETA GLOBAL / TOKENS PRIMITIVOS (Paul Tol "Muted")
+   ========================================================================== */
+:root {
+  /* Neutros Absolutos */
+  --color-white: #ffffff;
+
+  /* Escala de Neutros Claros */
+  --color-slate-50: #f4f5f9; /* Canvas Light */
+  --color-slate-100: #f4f6f8; /* Canvas Light Colorblind */
+  --color-slate-200: #e0e5ec; /* Text Primary Dark Colorblind */
+  --color-slate-300: #d7ddea; /* Border Light / Text Primary Dark */
+
+  /* Escala Media / Acentos Fríos */
+  --color-indigo-subtle: #949ebb; /* Border/Text Secondary Dark */
+  --color-periwinkle: #8da0cb; /* Línea principal Colorblind */
+  --color-lavender-soft: #a997df; /* Chip background Dark / Accent */
+
+  /* Escala Neutros Oscuros / Superficies */
+  --color-navy-dark: #2b2c3e; /* Surface / Text Secondary Light */
+  --color-slate-900: #1b1e2b; /* Canvas Dark Colorblind */
+  --color-black-night: #131317; /* Canvas Dark / Text Primary Light */
+
+  /* Colores de Acción / Estados */
+  --color-mauve-primary: #8e6b73; /* Primary Button Estándar */
+  --color-purple-accessible: #88419d; /* Primary Button Colorblind */
+  --color-red-error: #e5323b; /* Error State */
+
+  /* Variantes con Opacidad */
+  --color-navy-dark-transparent: rgba(43, 44, 62, 0.8);
+  --color-indigo-transparent: #949ebb4d;
+  --color-mauve-transparent: #8e6b73b3;
+  --color-navy-bar-transparent: #d9d9d908;
+}
+
+/* ==========================================================================
+   5. REGLAS BASE & TIPOGRAFÍA DE LA GUÍA DE DISEÑO
+   ========================================================================== */
+
+@theme {
+  --font-sans: 'Andika', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-padding-top: 68px;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+h1,
+.text-heading {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 2.25rem; /* ~36px Desktop */
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h2,
+.text-title-1 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.75rem; /* ~28px */
+  line-height: 1.2;
+}
+
+h3,
+.text-title-2 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.35rem; /* ~21px */
+  line-height: 1.3;
+}
+
+p,
+.body-text {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.body-large-regular {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.body-large-italic {
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.body-bold {
+  font-weight: 700;
+}
+
+a,
+.link {
+  color: inherit;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+a:hover,
+.link:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 640px) {
+  h1,
+  .text-heading {
+    font-size: 1.75rem;
+  }
+  h2,
+  .text-title-1 {
+    font-size: 1.45rem;
+  }
+  h3,
+  .text-title-2 {
+    font-size: 1.2rem;
+  }
+}

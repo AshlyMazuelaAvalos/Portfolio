@@ -1,0 +1,24 @@
+/* styles/Darkmode/colorblind.css */
+[data-theme='dark-colorblind'] {
+  /* Lienzo y Superficies */
+  --bg-canvas: var(--color-slate-900);
+  --bg-surface: var(--color-navy-dark);
+  --border-card: 2px solid var(--color-periwinkle);
+  --text-primary: var(--color-slate-200);
+  --text-secondary: var(--color-periwinkle);
+  --btn-primary-bg: var(--color-purple-accessible);
+  --btn-primary-text: var(--color-slate-200);
+  --btn-secondary-bg: var(--color-periwinkle);
+  --border-subtle: var(--color-indigo-subtle);
+  --chip-bg: var(--color-lavender-soft);
+  --chip-border: var(--color-periwinkle);
+  --chip-text: var(--color-slate-900);
+  --color-error: var(--color-red-error);
+  --card-bg: var(--color-navy-dark);
+  --card-text: var(--color-slate-300);
+  --link-decoration: underline;
+}
+
+[data-theme='dark-colorblind'] a {
+  text-underline-offset: 4px;
+}

@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "main": "Navegación principal",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "stack": "Stack",
+    "about": "Sobre mí",
+    "contact": "Contacto",
+    "downloadCv": "Descargar CV"
+  },
+  "brand": {
+    "role": "Ingeniera de Software"
+  },
+  "settings": {
+    "theme": "Configuración del tema",
+    "darkMode": "Modo oscuro",
+    "lightMode": "Modo claro",
+    "colorBlind": "Modo daltónico",
+    "language": "Seleccionar idioma"
+  },
+  "language": {
+    "spanish": "Español",
+    "english": "Inglés"
+  },
+  "footer": {
+    "copyright": "Ashly Mazuela. Todos los derechos reservados.",
+    "madeWith": "Diseñado y desarrollado por Ashly Mazuela."
+  },
+  "home": {
+    "title": "Ingeniera Civil Informática",
+    "subtitle": "FullStack & Mobile Engineer",
+    "projectsCta": "Revisar mis proyectos",
+    "description": "Construyo arquitecturas de software escalables e interfaces intuitivas, desde el diseño en Figma hasta el despliegue.",
+    "contactCta": "Conversemos",
+    "aboutCta": "Conozcámonos",
+    "availability": "Disponible para proyectos",
+    "role": "Desarrolladora Frontend"
+  },
+  "sections": {
+    "comingSoon": "Próximamente",
+    "stack": {
+      "title": "Tecnologías con las que trabajo",
+      "description": "Herramientas que utilizo para diseñar y desarrollar experiencias web y móviles."
+    },
+    "experience": {
+      "title": "Mi experiencia",
+      "description": "Estoy preparando esta sección para compartir mi trayectoria profesional."
+    },
+    "projects": {
+      "title": "Proyectos destacados",
+      "description": "Estoy preparando esta sección para mostrar mis proyectos y el proceso detrás de cada uno."
+    },
+    "contact": {
+      "title": "Conversemos",
+      "description": "¿Tienes una idea o una oportunidad en mente? Puedes encontrarme aquí:",
+      "linksLabel": "Enlaces de contacto",
+      "email": "Enviarme un correo"
+    }
+  },
+  "aboutMe": {
+    "eyebrow": "Sobre mí",
+    "title": "Hola, soy Ashly",
+    "intro": "Ingeniera Civil Informática enfocada en desarrollo Full-Stack, Mobile y experiencia de usuario (UX/UI)",
+    "description": {
+      "text1": "Me apasiona transformar requerimientos e ideas en",
+      "span1": " soluciones digitales escalables ",
+      "text2": "conectando el",
+      "span2": " diseño centrado en las personas ",
+      "text3": "y accesible con una implementación técnica sólida: desde el prototipado inicial hasta el despliegue en la nube."
+    },
+    "focusTitle": "En qué me enfoco",
+    "focus": {
+      "fullStack": {
+        "title": "Desarrollo FullStack",
+        "description": "Construcción de aplicaciones web completas y mantenibles. Desarrollo interfaces reactivas en React, Vue 3 y Angular, respaldadas por servicios robustos en Node.js, NestJS y Python, con bases de datos optimizadas y arquitecturas limpias."
+      },
+      "mobile": {
+        "title": "Desarrollo móvil",
+        "description": "Creación de aplicaciones fluidas y multiplataforma con Flutter, complementadas con desarrollo nativo en Kotlin. Aplico patrones de diseño como BLOC y principios de Clean Architecture para asegurar estabilidad y persistencia eficiente."
+      },
+      "design": {
+        "title": "Del diseño al despliegue",
+        "description": "Acompaño el ciclo de vida completo del producto: prototipado interactivo en Figma bajo criterios de accesibilidad (WCAG), flujos ágiles (Scrum / Kanban) y despliegue continuo en la nube con servicios de AWS y Docker."
+      }
+    }
+  }
+}

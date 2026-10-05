@@ -1,0 +1,19 @@
+/* Modo Oscuro Estándar */
+[data-theme='dark'] {
+  --bg-canvas: var(--color-black-night);
+  --bg-surface: var(--color-navy-dark);
+  --border-subtle: var(--color-indigo-subtle);
+  --border-card: 1px solid var(--color-indigo-transparent);
+  --text-primary: var(--color-slate-300);
+  --text-secondary: var(--color-indigo-subtle);
+  --btn-primary-bg: var(--color-mauve-primary);
+  --btn-primary-text: var(--color-white);
+  --btn-secondary-bg: var(--color-indigo-subtle);
+  --border-subtle: var(--color-periwinkle);
+  --chip-bg: var(--color-lavender-soft);
+  --chip-border: var(--color-indigo-subtle);
+  --chip-text: var(--color-black-night);
+  --card-bg: var(--color-navy-dark);
+  --card-text: var(--color-slate-300);
+  --link-decoration: none;
+}

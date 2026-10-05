@@ -1,0 +1,88 @@
+{
+  "nav": {
+    "main": "Main navigation",
+    "experience": "Experience",
+    "projects": "Projects",
+    "stack": "Stack",
+    "about": "About me",
+    "contact": "Contact",
+    "downloadCv": "Download CV"
+  },
+  "brand": {
+    "role": "Software Engineer"
+  },
+  "settings": {
+    "theme": "Theme settings",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode",
+    "colorBlind": "Color-blind mode",
+    "language": "Select language"
+  },
+  "language": {
+    "spanish": "Spanish",
+    "english": "English"
+  },
+  "footer": {
+    "copyright": "Ashly Mazuela. All rights reserved.",
+    "madeWith": "Designed and developed by Ashly Mazuela."
+  },
+  "home": {
+    "title": "Computer Science Engineer",
+    "subtitle": "FullStack & Mobile Engineer",
+    "projectsCta": "Explore my projects",
+    "description": "I build scalable software architectures and intuitive interfaces, from Figma design through deployment.",
+    "contactCta": "Let's talk",
+    "aboutCta": "Get to know me",
+    "profileLabel": "Professional profile",
+    "availability": "Available for projects",
+    "role": "Frontend Developer"
+  },
+  "sections": {
+    "comingSoon": "Coming soon",
+    "stack": {
+      "title": "Technologies I work with",
+      "description": "Tools I use to design and build web and mobile experiences."
+    },
+    "experience": {
+      "title": "My experience",
+      "description": "I'm preparing this section to share my professional journey."
+    },
+    "projects": {
+      "title": "Featured projects",
+      "description": "I'm preparing this section to showcase my projects and the process behind each one."
+    },
+    "contact": {
+      "title": "Let's talk",
+      "description": "Have an idea or opportunity in mind? You can find me here:",
+      "linksLabel": "Contact links",
+      "email": "Send me an email"
+    }
+  },
+  "aboutMe": {
+    "eyebrow": "About me",
+    "title": "Hi, I'm Ashly",
+    "intro": "Computer Science Engineer focused on FullStack and mobile development.",
+    "description": {
+      "text1": "I am passionate about transforming requirements and ideas into",
+      "span1": " scalable digital solutions ",
+      "text2": "connecting ",
+      "span2": " people-centered design ",
+      "text3": "with solid technical implementation: from initial prototyping to cloud deployment."
+    },
+    "focusTitle": "What I focus on",
+    "focus": {
+      "fullStack": {
+        "title": "FullStack development",
+        "description": "Building complete and maintainable web applications. Developing reactive interfaces in React, Vue 3, and Angular, backed by robust services in Node.js, NestJS, and Python, with optimized databases and clean architectures."
+      },
+      "mobile": {
+        "title": "Mobile development",
+        "description": "Creating smooth and cross-platform applications with Flutter, complemented by native development in Kotlin. I apply design patterns such as BLOC and principles of Clean Architecture to ensure stability and efficient persistence."
+      },
+      "design": {
+        "title": "From design to deployment",
+        "description": "A comprehensive approach to the product lifecycle: interactive prototyping in Figma under accessibility criteria (WCAG), agile workflows (Scrum / Kanban), and continuous deployment in the cloud with AWS and Docker services."
+      }
+    }
+  }
+}
