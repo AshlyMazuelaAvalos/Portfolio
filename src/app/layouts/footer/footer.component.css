@@ -14,5 +14,5 @@
 
 .footer-mark {
   @apply h-9 w-9 mb-0 shrink-0 bg-current text-[0.2rem];
-  mask: url('/assets/icons/favicon.svg') center / contain no-repeat;
+  mask: url('../../../assets/icons/favicon.svg') center / contain no-repeat;
 }

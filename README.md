@@ -62,5 +62,6 @@ This portfolio is designed to work with free hosting via _GitHub Pages_.
 - `npm update`: Updates all packages to the latest compatible versions.
 - `ng serve`: Launches the local development server.
 - `ng build`: Compiles the project for production deployment.
+- `ng deploy`: Builds and publishes the project to GitHub Pages with the configured `/Portfolio/` base path.
 
 Thanks for reading! 💫

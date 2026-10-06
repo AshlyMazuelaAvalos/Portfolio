@@ -130,6 +130,6 @@ export class NavbarComponent implements AfterViewInit {
   downloadCV(): void {
     const file =
       this.currentLang() === 'es' ? 'AshlyMazuela_ES_ATS.pdf' : 'AshlyMazuelaCV_EN_ATS.pdf';
-    window.open(`/assets/${file}`, '_blank');
+    window.open(`assets/${file}`, '_blank');
   }
 }
