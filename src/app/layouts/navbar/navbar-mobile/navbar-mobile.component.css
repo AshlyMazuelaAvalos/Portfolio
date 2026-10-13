@@ -1,0 +1,103 @@
+@reference '../../../../assets/styles/base.css';
+
+:host {
+  @apply block relative z-[1000] font-[family-name:var(--font-sans)];
+}
+
+.mobile-navbar {
+  @apply fixed top-0 z-[1000] w-full text-[var(--color-white)] bg-[var(--color-navy-dark)] border-b border-[var(--border-subtle)] backdrop-blur-md;
+}
+
+.mobile-navbar-bar {
+  @apply flex min-h-[52px] items-center justify-between px-5;
+}
+
+.mobile-brand {
+  @apply inline-flex items-center gap-2 text-inherit no-underline;
+}
+
+.mobile-brand-mark {
+  @apply w-8 h-8 shrink-0 bg-current;
+  mask: url('../../../../assets/icons/favicon.svg') center / contain no-repeat;
+}
+
+.mobile-brand-copy {
+  @apply flex flex-col gap-0.5 whitespace-nowrap leading-none;
+}
+
+.mobile-brand-name {
+  @apply text-[0.55rem] font-bold tracking-[0.06em];
+}
+
+.mobile-brand-role {
+  @apply text-[0.45rem] tracking-[0.02em] opacity-80;
+}
+
+.mobile-menu-toggle {
+  @apply inline-grid w-8 h-8 place-items-center p-0 border-0 rounded-md text-inherit bg-transparent cursor-pointer;
+  @apply hover:bg-[var(--btn-primary-bg)] focus-visible:bg-[var(--btn-primary-bg)];
+}
+
+.mobile-menu-toggle:focus-visible,
+.mobile-menu-panel button:focus-visible,
+.mobile-menu-panel a:focus-visible {
+  @apply outline-2 outline-[var(--color-white)] outline-offset-2;
+}
+
+.mobile-menu-panel {
+  @apply absolute top-[calc(100%+1px)] right-4 w-[min(13rem)] max-h-[calc(100dvh-4.5rem)] overflow-y-auto p-2 border border-[var(--border-subtle)] rounded-b-lg text-[var(--color-white)] bg-[var(--color-navy-dark)] shadow-[0_12px_24px_rgb(0_0_0/0.25)];
+}
+
+.mobile-nav-links {
+  @apply flex flex-col gap-0.5 m-0 p-0 pb-1.5 border-b border-[var(--border-subtle)] list-none;
+}
+
+.mobile-nav-links a,
+.mobile-settings-toggle,
+.mobile-theme-option,
+.mobile-language-option {
+  @apply flex min-h-7 items-center gap-1.5 px-1.5 py-1 border-0 rounded text-inherit bg-transparent text-[0.4rem] text-left no-underline cursor-pointer;
+  font: inherit;
+}
+
+.mobile-nav-links a:hover,
+.mobile-nav-links a.active,
+.mobile-settings-toggle:hover,
+.mobile-theme-option:hover,
+.mobile-language-option:hover {
+  @apply bg-[var(--btn-primary-bg)];
+}
+
+.mobile-settings {
+  @apply flex flex-col pt-1 pb-2;
+}
+
+.mobile-settings-toggle {
+  @apply w-full;
+}
+
+.mobile-settings-toggle span {
+  @apply flex-1;
+}
+
+.chevron {
+  @apply opacity-75;
+}
+
+.mobile-settings-content {
+  @apply flex flex-col p-0 pb-4 pl-4 text-[0.65rem] list-none;
+}
+
+.mobile-cv-button {
+  @apply w-full min-h-[1.875rem] mt-2 p-1.5 border border-[var(--color-indigo-transparent)] rounded-md text-[var(--color-white)] bg-[var(--btn-primary-bg)] text-[0.500rem] font-semibold text-center cursor-pointer hover:brightness-[1.08];
+  font: inherit;
+}
+
+.mobile-theme-option,
+.mobile-language-option {
+  @apply w-full text-[var(--color-slate-200)];
+}
+
+.mobile-language-option.selected {
+  @apply text-[var(--btn-primary-bg)] font-bold;
+}

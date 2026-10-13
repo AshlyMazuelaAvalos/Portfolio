@@ -1,5 +1,13 @@
 @reference '../../../assets/styles/base.css';
 
+.footer-desktop {
+  display: block;
+}
+
+.footer-mobile {
+  display: none;
+}
+
 .site-footer {
   @apply border-t border-[var(--border-subtle)] px-6 py-0 sm:px-10;
   @apply mx-auto flex max-h-full flex-col gap-1 border-t border-[var(--border-subtle)] pt-0 sm:flex-row sm:items-center sm:justify-between;
@@ -15,4 +23,14 @@
 .footer-mark {
   @apply h-9 w-9 mb-0 shrink-0 bg-current text-[0.2rem];
   mask: url('../../../assets/icons/favicon.svg') center / contain no-repeat;
+}
+
+@media (max-width: 1024px) {
+  .footer-desktop {
+    display: none;
+  }
+
+  app-footer-mobile.footer-mobile {
+    display: block;
+  }
 }

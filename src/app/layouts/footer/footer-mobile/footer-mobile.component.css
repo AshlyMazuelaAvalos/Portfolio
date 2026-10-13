@@ -1,0 +1,22 @@
+@reference '../../../../assets/styles/base.css';
+
+:host {
+  @apply block;
+}
+
+.mobile-footer {
+  @apply p-0 text-[var(--color-white)];
+}
+
+.mobile-footer-bar {
+  @apply flex min-h-9 items-center justify-center gap-1.5 w-full mx-auto px-2 py-1.5 bg-[var(--color-navy-dark)];
+}
+
+.mobile-footer-bar p {
+  @apply m-0 text-inherit text-[0.625rem] font-semibold leading-[1.4] text-center;
+}
+
+.mobile-footer-mark {
+  @apply w-6 h-6 shrink-0 bg-current;
+  mask: url('../../../../assets/icons/favicon.svg') center / contain no-repeat;
+}

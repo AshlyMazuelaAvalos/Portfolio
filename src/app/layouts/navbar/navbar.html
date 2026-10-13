@@ -1,5 +1,6 @@
-<header class="navbar-wrapper">
-  <nav class="navbar-container">
+<div class="navbar-desktop">
+  <header class="navbar-wrapper">
+    <nav class="navbar-container">
     <!-- Logo / Identidad -->
     <!-- Bloque Brand / Identidad -->
     <a
@@ -140,5 +141,24 @@
         {{ 'nav.downloadCv' | translate }}
       </app-button>
     </div>
-  </nav>
-</header>
+    </nav>
+  </header>
+</div>
+
+<app-navbar-mobile
+  class="navbar-mobile"
+  [navItems]="navItems"
+  [activeSection]="activeSection()"
+  [currentLang]="currentLang()"
+  [isThemeMenuOpen]="isThemeMenuOpen()"
+  [isLangMenuOpen]="isLangMenuOpen()"
+  [themeService]="themeService"
+  (sectionNavigate)="navigateToSection($event.event, $event.sectionId)"
+  (themeMenuToggle)="toggleThemeMenu($event)"
+  (languageMenuToggle)="toggleLangMenu($event)"
+  (languageChange)="setLanguage($event)"
+  (baseThemeToggle)="themeService.toggleBaseTheme()"
+  (colorblindToggle)="themeService.toggleColorblind()"
+  (cvDownload)="downloadCV()"
+  (menusClose)="closeMenus()"
+></app-navbar-mobile>

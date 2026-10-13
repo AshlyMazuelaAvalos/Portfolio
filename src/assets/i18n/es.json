@@ -6,13 +6,15 @@
     "stack": "Stack",
     "about": "Sobre mí",
     "contact": "Contacto",
-    "downloadCv": "Descargar CV"
+    "downloadCv": "Descargar CV",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
   },
   "brand": {
     "role": "Ingeniera de Software"
   },
   "settings": {
-    "theme": "Configuración del tema",
+    "theme": "Selección de tema",
     "darkMode": "Modo oscuro",
     "lightMode": "Modo claro",
     "colorBlind": "Modo daltónico",

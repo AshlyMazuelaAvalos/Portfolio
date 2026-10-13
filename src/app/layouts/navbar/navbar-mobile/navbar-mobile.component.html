@@ -1,0 +1,130 @@
+<header class="mobile-navbar">
+  <nav class="mobile-navbar-bar" [attr.aria-label]="'nav.main' | translate">
+    <a
+      routerLink="/"
+      class="mobile-brand"
+      aria-label="Ashly Mazuela"
+      (click)="closeMobileMenu()"
+    >
+      <span class="mobile-brand-mark" aria-hidden="true"></span>
+      <span class="mobile-brand-copy">
+        <span class="mobile-brand-name">ASHLY MAZUELA</span>
+        <span class="mobile-brand-role">{{ 'brand.role' | translate }}</span>
+      </span>
+    </a>
+
+    <button
+      type="button"
+      class="mobile-menu-toggle"
+      [attr.aria-expanded]="isMenuOpen"
+      [attr.aria-label]="(isMenuOpen ? 'nav.closeMenu' : 'nav.openMenu') | translate"
+      (click)="toggleMenu()"
+    >
+      @if (isMenuOpen) {
+        <svg lucideX size="19"></svg>
+      } @else {
+        <svg lucideMenu size="19"></svg>
+      }
+    </button>
+  </nav>
+
+  @if (isMenuOpen) {
+    <div class="mobile-menu-panel">
+      <ul class="mobile-nav-links">
+        @for (item of navItems; track item.id) {
+          <li>
+            <a
+              [class.active]="activeSection === item.id"
+              [attr.aria-current]="activeSection === item.id ? 'location' : null"
+              [href]="'/#' + item.id"
+              (click)="navigate($event, item.id)"
+            >
+              {{ item.label | translate }}
+            </a>
+          </li>
+        }
+      </ul>
+
+      <div class="mobile-settings">
+        <button
+          type="button"
+          class="mobile-settings-toggle"
+          [attr.aria-expanded]="isThemeMenuOpen"
+          (click)="themeMenuToggle.emit($event)"
+        >
+          <svg lucidePalette size="14"></svg>
+          <span>{{ 'settings.theme' | translate }}</span>
+          <svg class="chevron" lucideChevronDown size="13"></svg>
+        </button>
+
+        @if (isThemeMenuOpen) {
+          <div class="mobile-settings-content">
+            <button
+              type="button"
+              class="mobile-theme-option"
+              (click)="baseThemeToggle.emit()"
+            >
+              @if (themeService.baseTheme() === 'dark') {
+                <svg lucideMoon size="13"></svg>
+                <span>{{ 'settings.darkMode' | translate }}</span>
+              } @else {
+                <svg lucideSun size="13"></svg>
+                <span>{{ 'settings.lightMode' | translate }}</span>
+              }
+            </button>
+            <button
+              type="button"
+              class="mobile-theme-option"
+              (click)="colorblindToggle.emit()"
+            >
+              @if (themeService.isColorblind()) {
+                <svg lucideContrast size="13"></svg>
+              } @else {
+                <svg lucideEye size="13"></svg>
+              }
+              <span>{{ 'settings.colorBlind' | translate }}</span>
+            </button>
+          </div>
+        }
+
+        <button
+          type="button"
+          class="mobile-settings-toggle"
+          [attr.aria-expanded]="isLangMenuOpen"
+          (click)="languageMenuToggle.emit($event)"
+        >
+          <svg lucideLanguages size="14"></svg>
+          <span>{{ 'settings.language' | translate }}</span>
+          <svg class="chevron" lucideChevronDown size="13"></svg>
+        </button>
+
+        @if (isLangMenuOpen) {
+          <div class="mobile-settings-content">
+            <button
+              type="button"
+              class="mobile-language-option"
+              [class.selected]="currentLang === 'es'"
+              (click)="languageChange.emit('es')"
+            >
+              <span aria-hidden="true">🇨🇱</span>
+              <span>{{ 'language.spanish' | translate }}</span>
+            </button>
+            <button
+              type="button"
+              class="mobile-language-option"
+              [class.selected]="currentLang === 'en'"
+              (click)="languageChange.emit('en')"
+            >
+              <span aria-hidden="true">🇬🇧</span>
+              <span>{{ 'language.english' | translate }}</span>
+            </button>
+          </div>
+        }
+      </div>
+
+      <button type="button" class="mobile-cv-button" (click)="requestCvDownload()">
+        {{ 'nav.downloadCv' | translate }}
+      </button>
+    </div>
+  }
+</header>

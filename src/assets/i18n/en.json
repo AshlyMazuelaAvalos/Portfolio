@@ -6,7 +6,9 @@
     "stack": "Stack",
     "about": "About me",
     "contact": "Contact",
-    "downloadCv": "Download CV"
+    "downloadCv": "Download CV",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "brand": {
     "role": "Software Engineer"

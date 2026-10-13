@@ -20,6 +20,7 @@ import {
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { ThemeService } from '../../services/theme.service';
 import { ButtonComponent } from '../../shared/components/button/button.component';
+import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 
 @Component({
   selector: 'app-navbar',
@@ -29,6 +30,7 @@ import { ButtonComponent } from '../../shared/components/button/button.component
     CommonModule,
     TranslatePipe,
     ButtonComponent,
+    NavbarMobileComponent,
     LucideEye,
     LucideLanguages,
     LucideMoon,
