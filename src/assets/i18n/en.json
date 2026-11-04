@@ -43,7 +43,9 @@
     "comingSoon": "Coming soon",
     "stack": {
       "title": "Technologies I work with",
-      "description": "Tools I use to design and build web and mobile experiences."
+      "description": "A glimpse into the universe of technologies with which I build robust and modern digital experiences.",
+      "guide": "Experience level: 1 = Basic, 2 = Intermediate, 3 = Advanced, 4 = Expert. 5 = Master",
+      "guide2": "Experience level | Technology | Specialization Area"
     },
     "experience": {
       "title": "My experience",

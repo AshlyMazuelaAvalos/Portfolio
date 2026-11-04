@@ -42,7 +42,9 @@
     "comingSoon": "Próximamente",
     "stack": {
       "title": "Tecnologías con las que trabajo",
-      "description": "Herramientas que utilizo para diseñar y desarrollar experiencias web y móviles."
+      "description": "Un vistazo al universo de tecnologías con las que construyo experiencias digitales robustas y modernas.",
+      "guide": "Nivel de experiencia: 1 = Básico, 2 = Intermedio, 3 = Avanzado, 4 = Experto. 5 = Maestro",
+      "guide2": "Nivel de experiencia | Tecnología | Área de especialización"
     },
     "experience": {
       "title": "Mi experiencia",

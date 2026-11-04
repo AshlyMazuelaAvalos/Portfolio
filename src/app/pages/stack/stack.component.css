@@ -1,7 +1,7 @@
 @reference '../../../assets/styles/base.css';
 
 .content-section {
-  @apply mx-auto flex min-h-[60svh] w-full max-w-5xl flex-col items-center justify-center px-6 py-20 text-center sm:px-10;
+  @apply mx-auto flex min-h-[60svh] w-full max-w-5xl flex-col items-center justify-center px-6 pt-12 pb-6 text-center sm:px-10;
   scroll-margin-top: 68px;
 }
 
@@ -18,11 +18,7 @@
   @apply mt-4 max-w-2xl leading-7;
 }
 
-.technology-list {
-  @apply mt-8 flex max-w-3xl flex-wrap justify-center gap-3 p-0;
-  list-style: none;
-}
-
-.technology-list li {
-  @apply list-none;
+.technology-orbit {
+  @apply mt-0 pt-0;
+  color: var(--text-primary);
 }

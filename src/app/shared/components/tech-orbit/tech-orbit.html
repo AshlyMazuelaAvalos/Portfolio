@@ -1,0 +1,114 @@
+<div
+  class="relative mx-auto aspect-square w-full max-w-[600px] select-none [perspective:1000px] [transform-style:preserve-3d]"
+  [class.is-paused]="paused()"
+  role="group"
+  [attr.aria-label]="label()"
+  (keydown.escape)="selectedTechnologyId.set(null)"
+>
+  <div class="orbit-scene absolute inset-0 [transform-style:preserve-3d]">
+    @for (orbit of orbits(); track orbit.index) {
+      <div
+        class="orbit-plane pointer-events-none absolute inset-0 [transform-style:preserve-3d]"
+        [style.--orbit-scale]="orbit.scale"
+        [style.--rx]="orbit.rotateX + 'deg'"
+        [style.--ry]="orbit.rotateY + 'deg'"
+        [style.--rz]="orbit.rotateZ + 'deg'"
+      >
+        <svg
+          class="orbit-ring pointer-events-none absolute inset-0 h-full w-full overflow-visible"
+          viewBox="0 0 100 100"
+          fill="none"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient [attr.id]="'orbit-gradient-' + orbit.index" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="var(--chip-bg)" stop-opacity=".5" />
+              <stop offset=".5" stop-color="var(--chip-bg)" stop-opacity=".3" />
+              <stop offset="1" stop-color="var(--chip-bg)" stop-opacity=".6" />
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="49.6" stroke-width=".4" [attr.stroke]="'url(#orbit-gradient-' + orbit.index + ')'" />
+        </svg>
+
+        @for (item of orbit.technologies; track item.technology.id) {
+          <div
+            class="orbit-spin pointer-events-none absolute inset-0 [transform-style:preserve-3d]"
+            [style.--duration]="orbit.duration + 's'"
+            [style.animation-delay]="item.delay + 's'"
+            [style.animation-direction]="orbit.reverse ? 'reverse' : 'normal'"
+          >
+            <div class="orbit-anchor absolute left-full top-1/2 h-0 w-0 [transform-style:preserve-3d]">
+              <div
+                class="orbit-counter absolute -left-[18px] -top-[18px] h-9 w-9 max-sm:-left-4 max-sm:-top-4 max-sm:h-8 max-sm:w-8"
+                [style.--duration]="orbit.duration + 's'"
+                [style.animation-delay]="item.delay + 's'"
+                [style.animation-direction]="orbit.reverse ? 'reverse' : 'normal'"
+              >
+                <button
+                  type="button"
+                  class="satellite-button relative flex h-full w-full items-center justify-center rounded-full border border-white/25 text-slate-100 shadow-[0_0_10px_rgba(226,232,240,0.25)] transition-all duration-300 hover:scale-125 hover:border-white/60 hover:text-white hover:shadow-[0_0_20px_rgba(226,232,240,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-200 pointer-events-auto"
+                  [class.is-active]="activeTechnologyId() === item.technology.id"
+                  [attr.aria-label]="item.technology.name"
+                  [attr.aria-describedby]="'tech-tooltip-' + item.technology.id"
+                  [attr.aria-pressed]="selectedTechnologyId() === item.technology.id"
+                  (mouseenter)="hoveredTechnologyId.set(item.technology.id)"
+                  (mouseleave)="hoveredTechnologyId.set(null)"
+                  (focus)="hoveredTechnologyId.set(item.technology.id)"
+                  (blur)="hoveredTechnologyId.set(null)"
+                  (click)="toggleTechnology(item.technology.id)"
+                >
+                  <span class="satellite-icon" [innerHTML]="item.icon"></span>
+                </button>
+
+                <!-- Tooltip con visibilidad forzada mediante la señal activa -->
+                <span
+                  class="satellite-tooltip pointer-events-none absolute top-full z-20 mt-2 origin-top whitespace-nowrap rounded-full border border-white/20 px-3 py-1 text-xs font-medium text-white shadow-[0_0_18px_rgba(226,232,240,0.35)] backdrop-blur-md transition-all duration-200"
+                  [class.opacity-100]="activeTechnologyId() === item.technology.id"
+                  [class.scale-100]="activeTechnologyId() === item.technology.id"
+                  [class.opacity-0]="activeTechnologyId() !== item.technology.id"
+                  [class.scale-75]="activeTechnologyId() !== item.technology.id"
+                  [id]="'tech-tooltip-' + item.technology.id"
+                  role="tooltip"
+                >
+                  {{ item.technology.level + ' | '}}
+                  {{ item.technology.name + ' | '}}
+                  @if (item.technology.category) {
+                    <small class="ml-2 text-[10px] uppercase tracking-wider text-rose-200/70">
+                      {{ item.technology.category }}
+                    </small>
+                  }
+                </span>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    }
+
+    <!-- Burbuja central con evento hover opcional para pausar solo si se desea -->
+    <div
+      class="bubble-container absolute left-1/2 top-1/2 z-10 h-[32%] w-[32%] -translate-x-1/2 -translate-y-1/2"
+      (mouseenter)="stageHovered.set(true)"
+      (mouseleave)="stageHovered.set(false)"
+      (focusin)="stageHovered.set(true)"
+      (focusout)="stageHovered.set(false)"
+    >
+      <div
+        class="bubble pointer-events-auto relative flex h-full w-full cursor-pointer items-center justify-center rounded-full transition-transform duration-300 hover:scale-95"
+        tabindex="0"
+        role="img"
+        aria-describedby="tech-orbit-guide-tooltip"
+      >
+        <img src="assets/icons/favicon.svg" alt="Logo" class="h-30 w-30 drop-shadow-[0_0_15px_rgba(142,107,115,0.6)]" />
+      </div>
+      <span class="bubble-tooltip" id="tech-orbit-guide-tooltip" role="tooltip">
+        <span>{{ guide() }}</span>
+        <span>{{ guide2() }}</span>
+      </span>
+    </div>
+  </div>
+
+  @if (selectedTechnology(); as selected) {
+    <span class="sr-only" aria-live="polite">{{ selected.name }} seleccionado</span>
+  }
+</div>

@@ -1,10 +1,15 @@
 <section class="content-section" id="stack" aria-labelledby="stack-title">
   <p class="eyebrow">{{ 'nav.stack' | translate }}</p>
   <h2 id="stack-title">{{ 'sections.stack.title' | translate }}</h2>
-  <p class="section-description">{{ 'sections.stack.description' | translate }}</p>
-  <ul class="technology-list" [attr.aria-label]="'sections.stack.technologies' | translate">
-    @for (technology of technologies; track technology) {
-      <li><app-stack-pill [label]="technology" /></li>
-    }
-  </ul>
+  <p class="section-description max-w-2xl">
+    {{ 'sections.stack.description' | translate }}
+  </p>
+  <div class="w-full overflow-hidden px-4 py-0">
+  <app-tech-orbit
+    class="technology-orbit -mt-6"
+    [label]="'sections.stack.technologies' | translate"
+    [guide]="'sections.stack.guide' | translate"
+    [guide2]="'sections.stack.guide2' | translate"
+  />
+  </div>
 </section>

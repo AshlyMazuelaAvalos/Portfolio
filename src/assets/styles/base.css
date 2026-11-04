@@ -73,7 +73,7 @@
   --color-red-error: #e5323b; /* Error State */
 
   /* Variantes con Opacidad */
-  --color-navy-dark-transparent: rgba(43, 44, 62, 0.8);
+  --color-navy-dark-transparent: #2b2c3ecc;
   --color-indigo-transparent: #949ebb4d;
   --color-mauve-transparent: #8e6b73b3;
   --color-navy-bar-transparent: #d9d9d908;

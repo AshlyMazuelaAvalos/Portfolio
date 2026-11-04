@@ -1,0 +1,211 @@
+@reference '../../../../assets/styles/base.css';
+/* --- Utilidades 3D de Órbita --- */
+.orbit-scene,
+.orbit-plane,
+.orbit-spin,
+.orbit-anchor {
+  transform-style: preserve-3d;
+}
+
+.orbit-plane {
+  z-index: 1;
+  transform: rotateZ(var(--rz)) rotateY(var(--ry)) rotateX(var(--rx)) scale(var(--orbit-scale));
+}
+
+.orbit-ring {
+  z-index: 0;
+  filter: drop-shadow(0 0 2px var(--chip-bg)) drop-shadow(0 0 8px var(--chip-bg));
+}
+
+.orbit-spin {
+  z-index: 1;
+  animation: orbit-spin var(--duration) linear infinite;
+}
+
+.orbit-counter {
+  animation: orbit-counter var(--duration) linear infinite;
+}
+
+.is-paused .orbit-spin,
+.is-paused .orbit-counter {
+  animation-play-state: paused;
+}
+
+/* --- Tooltips y Botones Satelitales --- */
+.satellite-tooltip,
+.satellite-button {
+  z-index: 110;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--color-navy-dark);
+}
+.satellite-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border-radius: 9999px;
+  border: 1.5px solid color-mix(in srgb, var(--btn-primary-bg) 40%, var(--border-subtle));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.satellite-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58%;
+  height: 58%;
+}
+
+:host ::ng-deep .satellite-icon > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.satellite-button.is-active + .satellite-tooltip,
+.satellite-tooltip.opacity-100 {
+  opacity: 1;
+  transform: translateX(-50%) scale(0.65);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* --- Burbuja Central Optimizada --- */
+.bubble {
+  position: relative;
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      color-mix(in srgb, var(--btn-primary-text) 50%, var(--btn-primary-bg)) 0%,
+      transparent 45%
+    ),
+    radial-gradient(circle at 50% 50%, var(--btn-primary-bg) 0%, var(--btn-primary-bg) 100%);
+  border: 1.5px solid color-mix(in srgb, var(--btn-primary-bg) 30%, var(--btn-primary-bg));
+  box-shadow:
+    inset -15px -15px 35px rgba(0, 0, 0, 0.705),
+    inset 12px 12px 25px var(--color-mauve-transparent),
+    0 0 30px color-mix(in srgb, var(--color-mauve-transparent) 60%, transparent),
+    0 0 70px color-mix(in srgb, var(--card-bg) 35%, transparent);
+  animation: bubble-pulse 4.5s ease-in-out infinite;
+}
+
+.bubble-tooltip {
+  position: absolute;
+  top: -8rem;
+  left: 50%;
+  z-index: 20;
+  display: grid;
+  width: max-content;
+  gap: 0.25rem;
+  padding: 0.615rem 0.875rem;
+  transform: translate(-50%, -0.25rem);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.75rem;
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.bubble-container:hover .bubble-tooltip,
+.bubble-container:focus-within .bubble-tooltip {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+.bubble::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  background: conic-gradient(
+    from 210deg,
+    var(--btn-primary-bg),
+    var(--border-subtle),
+    var(--btn-primary-bg)
+  );
+  filter: blur(3px);
+  opacity: 0.6;
+  pointer-events: none;
+  mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 4px));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 4px));
+}
+
+.bubble::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 12%;
+  width: 35%;
+  height: 18%;
+  transform: rotate(-30deg);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    color-mix(in srgb, var(--btn-primary-text) 40%, transparent),
+    transparent 70%
+  );
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+/* --- Animaciones --- */
+@keyframes orbit-spin {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes orbit-counter {
+  from {
+    transform: rotateZ(0deg) rotateX(calc(var(--rx) * -1)) rotateY(calc(var(--ry) * -1))
+      rotateZ(calc(var(--rz) * -1));
+  }
+  to {
+    transform: rotateZ(-360deg) rotateX(calc(var(--rx) * -1)) rotateY(calc(var(--ry) * -1))
+      rotateZ(calc(var(--rz) * -1));
+  }
+}
+
+@keyframes bubble-pulse {
+  0%,
+  100% {
+    box-shadow:
+      inset -15px -15px 35px rgba(0, 0, 0, 0.705),
+      inset 12px 12px 25px var(--color-mauve-transparent),
+      0 0 10px color-mix(in srgb, var(--btn-primary-bg) 50%, transparent),
+      0 0 25px color-mix(in srgb, var(--btn-primary-bg) 30%, transparent);
+  }
+  50% {
+    box-shadow:
+      inset -15px -15px 35px rgba(0, 0, 0, 0.705),
+      inset 12px 12px 25px var(--color-mauve-transparent),
+      0 0 18px color-mix(in srgb, var(--btn-primary-bg) 80%, transparent),
+      0 0 40px color-mix(in srgb, var(--btn-primary-bg) 50%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-spin,
+  .orbit-counter,
+  .bubble {
+    animation-play-state: paused;
+  }
+  .satellite-tooltip {
+    transition-duration: 0.01ms;
+  }
+}
