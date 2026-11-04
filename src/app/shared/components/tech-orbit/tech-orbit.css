@@ -121,6 +121,16 @@
     transform 0.2s ease;
 }
 
+@media (max-width: 640px) {
+  .bubble-tooltip {
+    top: -6rem;
+    box-sizing: border-box;
+    max-width: calc(100vw - 3rem);
+    overflow-wrap: anywhere;
+    font-size: 0.5rem;
+  }
+}
+
 .bubble-container:hover .bubble-tooltip,
 .bubble-container:focus-within .bubble-tooltip {
   transform: translate(-50%, 0);
