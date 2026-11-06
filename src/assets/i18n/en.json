@@ -48,8 +48,38 @@
       "guide2": "Experience level | Technology | Specialization Area"
     },
     "experience": {
-      "title": "My experience",
-      "description": "I'm preparing this section to share my professional journey."
+      "title": "Knowledge & Academic Background",
+      "description": "Computer Science Engineering background focused on software engineering, Clean Architecture, and Domain-Driven Design (DDD). Interested in building maintainable solutions and collaborating through agile methodologies.",
+      "timelineTitle": "Work Experience",
+      "focusYear": "Focus year",
+      "focusedYear": "Focused year:",
+      "showAll": "Show all",
+      "showDescription": "Show description",
+      "hideDescription": "Hide description",
+      "milestones": {
+        "fondecyt": {
+          "title": "Project Management Assistant & Software Development",
+          "subtitle": "Fondecyt Project 11251489 – Software Research",
+          "description": "Direct support in management, control, and development of the project: 'Model-Driven Development of Strategically Aligned Microservice-Based Applications'. Technical coordination and deliverable tracking under agile workflow (Kanban), centralizing technical documentation and ensuring traceability."
+        },
+        "fullstack": {
+          "title": "Full-Stack Developer (Web, Mobile & Cloud)",
+          "subtitle": "Independent & AI Alpha Analytics",
+          "description": "Provision of autonomous services in full stack web development using React, Vue 3, Node.js, TypeScript, NestJS, and Python (Flask/FastAPI). Cross-platform mobile app development with Flutter/Dart and native Kotlin components under Clean Architecture. Cloud platform configuration, architecture, and deployment via Amazon Web Services (AWS): S3, Amplify, and CloudFront. Comprehensive UI design and implementation for an animal shelter adoption management platform developed in Java. Relational and non-relational database modeling and implementation (PostgreSQL, MySQL, MongoDB), ensuring transactional integrity and query optimization. Stability assurance through automated testing (Jest, PyTest) and collaborative code reviews under agile frameworks (Scrum, Shape Up)."
+        },
+        "ux_ui": {
+          "title": "UX/UI Designer, Graphic Designer & Web Developer",
+          "subtitle": "Freelance & Fablab UV (Fablab.UV.cl)",
+          "description": "Creation of high and low-fidelity interactive prototypes for mobile and web systems using Figma and Canva. Conceptual and interface design for the official AI Alpha Analytics landing page, ensuring web accessibility (WCAG). Design of corporate graphic material, visual and promotional identity for events and CR2 UV robotics competitions."
+        },
+        "internship": {
+          "title": "Professional Internship",
+          "subtitle1": "FourDplan",
+          "description1": "Gathering and drafting of specialized technical documentation for a BIM management system at FourDplan.",
+          "subtitle2": "AI Alpha Analytics",
+          "description2": "Design and development of a multi-device responsive website, along with brand identity, logos, and brand manual for AI Alpha Analytics."
+        }
+      }
     },
     "projects": {
       "title": "Featured projects",
@@ -87,6 +117,24 @@
         "title": "From design to deployment",
         "description": "A comprehensive approach to the product lifecycle: interactive prototyping in Figma under accessibility criteria (WCAG), agile workflows (Scrum / Kanban), and continuous deployment in the cloud with AWS and Docker services."
       }
+    },
+    "tech": {
+      "kanban": "Kanban",
+      "microservices": "Microservices",
+      "projectManagement": "Project Management",
+      "react": "React",
+      "vue": "Vue 3",
+      "nestjs": "NestJS",
+      "aws": "AWS",
+      "flutter": "Flutter",
+      "kotlin": "Kotlin",
+      "figma": "Figma",
+      "uxui": "UX/UI",
+      "wcag": "WCAG",
+      "canva": "Canva",
+      "webDev": "Web Development",
+      "branding": "Branding",
+      "bim": "BIM"
     }
   }
 }

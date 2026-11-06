@@ -1,8 +1,12 @@
 @reference '../../../assets/styles/base.css';
 
-.content-section {
-  @apply mx-auto flex min-h-[60svh] w-full max-w-5xl flex-col items-center justify-center px-6 py-20 text-center sm:px-10;
+.experience-section {
+  @apply mx-auto flex min-h-[60svh] w-full max-w-5xl flex-col px-6 py-20 sm:px-10;
   scroll-margin-top: 68px;
+}
+
+.section-heading {
+  @apply text-center;
 }
 
 .eyebrow {
@@ -10,15 +14,41 @@
   color: var(--btn-primary-bg);
 }
 
-.content-section h2 {
-  @apply m-0 text-3xl sm:text-4xl;
+.section-heading h2 {
+  @apply m-0 text-3xl leading-tight sm:text-4xl;
+  color: var(--text-primary);
 }
 
-.section-description {
-  @apply mt-4 max-w-2xl leading-7;
+.introduction {
+  @apply mx-auto mt-10 grid w-full max-w-4xl items-center gap-6 rounded-2xl border p-6 sm:grid-cols-[150px_minmax(0,1fr)] sm:gap-9 sm:p-8;
+  border-color: var(--border-subtle);
+  background:
+    radial-gradient(
+      ellipse at 8% 50%,
+      color-mix(in srgb, var(--btn-primary-bg) 16%, transparent),
+      transparent 58%
+    ),
+    color-mix(in srgb, var(--card-bg) 82%, transparent);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.14);
 }
 
-.coming-soon {
-  @apply mt-5 rounded-full border border-[var(--border-subtle)] px-4 py-2 text-sm;
+.introduction-avatar {
+  @apply mx-auto grid h-32 w-32 place-items-center rounded-2xl sm:h-36 sm:w-36;
+  color: var(--btn-primary-bg);
+  background: color-mix(in srgb, var(--btn-primary-bg) 16%, var(--card-bg));
+}
+
+.introduction-avatar svg {
+  @apply h-24 w-24;
+}
+
+.introduction p {
+  @apply m-0 text-center text-sm leading-7 sm:text-left sm:text-base;
   color: var(--text-secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .introduction {
+    scroll-behavior: auto;
+  }
 }

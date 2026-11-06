@@ -1,0 +1,72 @@
+<article class="experience-card" [class.experience-card--compact]="compact()">
+  @if (category(); as experienceCategory) {
+    <div class="experience-category">
+      @if (categoryIconUrl(); as icon) {
+        <img [src]="icon" alt="" aria-hidden="true" />
+      }
+      <span>{{ experienceCategory }}</span>
+    </div>
+  }
+
+  <div class="experience-copy">
+    <h3>{{ title() }}</h3>
+    <button
+      type="button"
+      class="mt-2 inline-flex items-center gap-2 rounded-md px-1 py-1 text-left text-sm font-semibold text-[var(--chip-bg)] transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--chip-bg)]"
+      [attr.aria-expanded]="descriptionExpanded()"
+      [attr.aria-controls]="descriptionId()"
+      (click)="toggleDescription()"
+    >
+      <span>
+        {{
+          (descriptionExpanded()
+            ? 'sections.experience.hideDescription'
+            : 'sections.experience.showDescription'
+          ) | translate
+        }}
+      </span>
+      <svg
+        class="h-4 w-4 transition-transform duration-300 motion-reduce:transition-none"
+        [class.rotate-180]="descriptionExpanded()"
+        viewBox="0 0 20 20"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d="m5 7.5 5 5 5-5"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.75"
+        />
+      </svg>
+    </button>
+    <div
+      class="grid overflow-hidden transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none"
+      [class]="descriptionExpanded() ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'"
+    >
+      <div
+        class="min-h-0 overflow-hidden"
+        [id]="descriptionId()"
+        [attr.aria-hidden]="descriptionExpanded() ? null : 'true'"
+        [attr.inert]="descriptionExpanded() ? null : ''"
+      >
+        <p class="mt-3">{{ description() }}</p>
+      </div>
+    </div>
+  </div>
+
+  @if (displayedTechTags().length > 0) {
+    <ul class="experience-technologies">
+      @for (technology of displayedTechTags(); track technology.labelKey) {
+        <li>
+          @if (compact()) {
+            <span class="experience-tech-tag">{{ technology.labelKey | translate }}</span>
+          } @else {
+            <app-stack-pill [label]="technology.labelKey | translate" [iconUrl]="technology.iconUrl" />
+          }
+        </li>
+      }
+    </ul>
+  }
+</article>

@@ -57,7 +57,10 @@
                   (blur)="hoveredTechnologyId.set(null)"
                   (click)="toggleTechnology(item.technology.id)"
                 >
-                  <span class="satellite-icon" [innerHTML]="item.icon"></span>
+                  <span
+                    class="satellite-icon"
+                    [style.--icon-mask]="'url(' + item.technology.iconUrl + ')'"
+                  ></span>
                 </button>
 
                 <!-- Tooltip con visibilidad forzada mediante la señal activa -->

@@ -1,6 +1,10 @@
 <span class="stack-pill">
   @if (iconUrl(); as icon) {
-    <img [src]="icon" alt="" aria-hidden="true" />
+    <span
+      class="stack-pill-icon"
+      [style.--stack-pill-icon]="'url(' + icon + ')'"
+      aria-hidden="true"
+    ></span>
   }
   <span>{{ label() }}</span>
 </span>

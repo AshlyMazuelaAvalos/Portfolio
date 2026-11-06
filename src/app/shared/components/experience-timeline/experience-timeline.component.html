@@ -1,0 +1,42 @@
+<div class="timeline-section">
+  <h3 class="timeline-title">{{ 'sections.experience.timelineTitle' | translate }}</h3>
+  <p class="timeline-subtitle">
+    Haz clic en un periodo de la línea para desplegar la experiencia y proyectos.
+  </p>
+
+  <!-- Barra horizontal de intervalos -->
+  <div class="timeline-horizontal-container">
+    <div class="timeline-track">
+      <div class="timeline-line"></div>
+      @for (interval of intervals; track interval.id) {
+        <button
+          class="timeline-node-btn"
+          [class.is-active]="selectedId() === interval.id"
+          type="button"
+          (click)="selectInterval(interval.id)"
+          [attr.aria-pressed]="selectedId() === interval.id"
+        >
+          <span class="timeline-circle"></span>
+          <span class="timeline-label">{{ interval.period }}</span>
+        </button>
+      }
+    </div>
+  </div>
+
+  <!-- Se muestran las tarjetas cuyo año está dentro del intervalo seleccionado. -->
+  <div class="timeline-cards-container">
+    <div class="cards-grid">
+      @for (project of activeProjects(); track project.id) {
+        <app-experience-card
+          class="experience-card-item"
+          [title]="project.titleKey | translate"
+          [description]="project.descriptionKey | translate"
+          [descriptionId]="'experience-description-' + project.id"
+          [date]="project.year.toString()"
+          [techTags]="project.techTags"
+          [compact]="false"
+        />
+      }
+    </div>
+  </div>
+</div>

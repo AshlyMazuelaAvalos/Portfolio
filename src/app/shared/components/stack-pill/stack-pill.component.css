@@ -6,6 +6,9 @@
   color: var(--chip-text);
 }
 
-.stack-pill img {
-  @apply h-5 w-5 object-contain;
+.stack-pill-icon {
+  @apply h-5 w-5 shrink-0;
+  background-color: var(--chip-text);
+  -webkit-mask: var(--stack-pill-icon) center / contain no-repeat;
+  mask: var(--stack-pill-icon) center / contain no-repeat;
 }
