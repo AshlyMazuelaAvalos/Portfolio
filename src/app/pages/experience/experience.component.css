@@ -33,13 +33,21 @@
 }
 
 .introduction-avatar {
-  @apply mx-auto grid h-32 w-32 place-items-center rounded-2xl sm:h-36 sm:w-36;
-  color: var(--btn-primary-bg);
-  background: color-mix(in srgb, var(--btn-primary-bg) 16%, var(--card-bg));
+  @apply relative mx-auto h-[170px] w-[170px] overflow-hidden rounded-full;
 }
 
-.introduction-avatar svg {
-  @apply h-24 w-24;
+.introduction-avatar::after {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--color-mauve-transparent);
+  content: '';
+  mix-blend-mode: color;
+}
+
+.introduction-avatar img {
+  @apply h-full w-full object-cover;
+  object-position: 63% 34%;
 }
 
 .introduction p {

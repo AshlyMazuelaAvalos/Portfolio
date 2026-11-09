@@ -56,7 +56,7 @@ export class ExperienceTimelineComponent {
       year: 2023,
       titleKey: 'sections.experience.milestones.internship.title',
       subtitleKey: 'sections.experience.milestones.internship.subtitle',
-      descriptionKey: 'sections.experience.milestones.internship.description',
+      descriptionKey: 'sections.experience.milestones.internship.description1',
       techTags: [{ labelKey: 'tech.bim' }],
     },
     {
