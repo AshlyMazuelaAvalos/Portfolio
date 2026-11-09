@@ -48,7 +48,8 @@
     },
     "experience": {
       "title": "Conocimientos & Formación Académica",
-      "description": "Formación en Ingeniería Civil Informática con enfoque en ingeniería de software, Clean Architecture y Domain-Driven Design (DDD). Interés en crear soluciones mantenibles y colaborar mediante metodologías ágiles.",
+      "description": "Más allá de la escritura de código, mi paso por la carrera de ingeniería civil informática me formó en la comprensión integral de requerimientos, estructuras de datos y buenas prácticas como Clean Architecture y DDD. Esta visión integral guía mi trayectoria laboral, uniendo prototipado accesible con desarrollo full stack modular, abarcando desde aplicaciones móviles nativas y multiplataforma hasta pipelines de procesamiento asíncrono. Además me permitió acercarme a distintas herramientas que permiten trabajar en equipo como metodologías ágiles.",
+      "instruction": "Haz clic en un periodo de la línea para desplegar la experiencia y proyectos.",
       "timelineTitle": "Experiencia Laboral",
       "showDescription": "Ver descripción",
       "hideDescription": "Ocultar descripción",
@@ -61,7 +62,7 @@
         "fullstack": {
           "title": "Full-Stack Developer (Web, Mobile & Cloud)",
           "subtitle": "Independiente & AI Alpha Analytics",
-          "description": "Prestación de servicios autónomos en desarrollo web full stack utilizando React, Vue 3, Node.js, TypeScript, NestJS y Python (Flask/FastAPI). Desarrollo de aplicaciones móviles multiplataforma con Flutter/Dart y componentes nativos en Kotlin bajo Clean Architecture. Configuración, arquitectura y despliegue de plataformas en entornos cloud mediante Amazon Web Services (AWS): S3, Amplify y CloudFront. Diseño e implementación integral de interfaz de usuario para una plataforma de gestión de adopciones desarrollada en Java para un refugio animal. Modelado e implementación de bases de datos relacionales y no relacionales (PostgreSQL, MySQL, MongoDB), garantizando integridad transaccional y optimización de consultas. Aseguramiento de estabilidad mediante pruebas automatizadas (Jest, PyTest) y revisiones de código colaborativas bajo marcos ágiles (Scrum, Shape Up)."
+          "description": "Prestación de servicios autónomos en desarrollo web full stack utilizando React, Vue 3, Node.js, TypeScript, NestJS y Python (Flask/FastAPI). Desarrollo de aplicaciones móviles multiplataforma con Flutter/Dart. Configuración, arquitectura y despliegue de plataformas en entornos cloud mediante Amazon Web Services (AWS): S3, Amplify. . Modelado e implementación de bases de datos relacionales y no relacionales (PostgreSQL, MySQL, MongoDB), garantizando integridad transaccional y optimización de consultas."
         },
         "ux_ui": {
           "title": "Diseñadora UX/UI, Gráfica & Desarrolladora Web",
