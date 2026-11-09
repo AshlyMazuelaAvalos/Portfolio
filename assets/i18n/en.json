@@ -49,7 +49,8 @@
     },
     "experience": {
       "title": "Knowledge & Academic Background",
-      "description": "Computer Science Engineering background focused on software engineering, Clean Architecture, and Domain-Driven Design (DDD). Interested in building maintainable solutions and collaborating through agile methodologies.",
+      "description": "Beyond writing code, my time studying computer science and engineering gave me a comprehensive understanding of requirements, data structures, and best practices such as Clean Architecture and DDD. This comprehensive perspective guides my professional career, combining accessible prototyping with modular full-stack development, ranging from native and cross-platform mobile applications to asynchronous processing pipelines. It has also allowed me to gain experience with various tools that facilitate teamwork, such as agile methodologies.",
+      "instruction": "Click on a timeline period to expand the experience and projects.",
       "timelineTitle": "Work Experience",
       "focusYear": "Focus year",
       "focusedYear": "Focused year:",
@@ -65,7 +66,7 @@
         "fullstack": {
           "title": "Full-Stack Developer (Web, Mobile & Cloud)",
           "subtitle": "Independent & AI Alpha Analytics",
-          "description": "Provision of autonomous services in full stack web development using React, Vue 3, Node.js, TypeScript, NestJS, and Python (Flask/FastAPI). Cross-platform mobile app development with Flutter/Dart and native Kotlin components under Clean Architecture. Cloud platform configuration, architecture, and deployment via Amazon Web Services (AWS): S3, Amplify, and CloudFront. Comprehensive UI design and implementation for an animal shelter adoption management platform developed in Java. Relational and non-relational database modeling and implementation (PostgreSQL, MySQL, MongoDB), ensuring transactional integrity and query optimization. Stability assurance through automated testing (Jest, PyTest) and collaborative code reviews under agile frameworks (Scrum, Shape Up)."
+          "description": "Provision of autonomous services in full stack web development using React, Vue 3, Node.js, TypeScript, NestJS, and Python (Flask/FastAPI). Cross-platform mobile app development with Flutter/Dart. Cloud platform configuration, architecture, and deployment via Amazon Web Services (AWS): S3, Amplify. Relational and non-relational database modeling and implementation (PostgreSQL, MySQL, MongoDB), ensuring transactional integrity and query optimization."
         },
         "ux_ui": {
           "title": "UX/UI Designer, Graphic Designer & Web Developer",
