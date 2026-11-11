@@ -57,7 +57,11 @@ export class ExperienceTimelineComponent {
       titleKey: 'sections.experience.milestones.internship.title',
       subtitleKey: 'sections.experience.milestones.internship.subtitle',
       descriptionKey: 'sections.experience.milestones.internship.description1',
-      techTags: [{ labelKey: 'tech.bim' }],
+      techTags: [
+        { labelKey: 'tech.bim', iconUrl: 'assets/icons/tech/bim.svg' },
+        { labelKey: 'tech.documentation', iconUrl: 'assets/icons/tech/doc.svg' },
+        { labelKey: 'tech.mic365', iconUrl: 'assets/icons/tech/microsoft.svg' },
+      ],
     },
     {
       id: 'internship2',
@@ -83,7 +87,7 @@ export class ExperienceTimelineComponent {
         { labelKey: 'tech.figma', iconUrl: 'assets/icons/tech/figma.svg' },
         { labelKey: 'tech.uxui' },
         { labelKey: 'tech.wcag' },
-        { labelKey: 'tech.canva' },
+        { labelKey: 'tech.canva', iconUrl: 'assets/icons/tech/canva.svg' },
       ],
     },
     {
