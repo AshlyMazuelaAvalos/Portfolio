@@ -29,8 +29,8 @@
     "madeWith": "Diseñado y desarrollado por Ashly Mazuela."
   },
   "home": {
-    "title": "Ingeniera Civil Informática",
-    "subtitle": "FullStack & Mobile Engineer",
+    "title": "Ashly Mazuela Ávalos",
+    "subtitle": "Ingeniera Civil Informática | FullStack & Mobile Engineer",
     "projectsCta": "Revisar mis proyectos",
     "description": "Construyo arquitecturas de software escalables e interfaces intuitivas, desde el diseño en Figma hasta el despliegue.",
     "contactCta": "Conversemos",
@@ -132,6 +132,8 @@
     "canva": "Canva",
     "webDev": "Desarrollo Web",
     "branding": "Branding",
-    "bim": "BIM"
+    "bim": "BIM",
+    "documentation": "Documentación",
+    "mic365": "Microsoft 365"
   }
 }
