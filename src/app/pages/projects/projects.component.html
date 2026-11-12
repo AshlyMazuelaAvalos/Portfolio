@@ -2,5 +2,18 @@
   <p class="eyebrow">{{ 'nav.projects' | translate }}</p>
   <h2 id="projects-title">{{ 'sections.projects.title' | translate }}</h2>
   <p class="section-description">{{ 'sections.projects.description' | translate }}</p>
-  <p class="coming-soon">{{ 'sections.comingSoon' | translate }}</p>
+
+  <div class="projects-list">
+    @for (project of featuredProjects; track project.titleKey) {
+      <app-project-detail-card
+        [title]="project.titleKey | translate"
+        [imageUrl]="project.imageUrl"
+        [videoUrl]="project.videoUrl"
+        [description]="project.descriptionKey | translate"
+        [technologies]="project.technologies"
+        [projectUrl]="project.projectUrl"
+        [designUrl]="project.designUrl"
+      />
+    }
+  </div>
 </section>

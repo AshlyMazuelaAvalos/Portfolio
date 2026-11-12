@@ -1,7 +1,7 @@
 @reference '../../../assets/styles/base.css';
 
 .content-section {
-  @apply mx-auto flex min-h-[60svh] w-full max-w-5xl flex-col items-center justify-center px-6 py-20 text-center sm:px-10;
+  @apply mx-auto flex min-h-[60svh] w-full max-w-7xl flex-col items-center px-6 py-20 text-center sm:px-10;
   scroll-margin-top: 68px;
 }
 
@@ -18,7 +18,10 @@
   @apply mt-4 max-w-2xl leading-7;
 }
 
-.coming-soon {
-  @apply mt-5 rounded-full border border-[var(--border-subtle)] px-4 py-2 text-sm;
-  color: var(--text-secondary);
+.projects-list {
+  display: grid;
+  width: 100%;
+  gap: 2rem;
+  margin-top: 3rem;
+  text-align: left;
 }

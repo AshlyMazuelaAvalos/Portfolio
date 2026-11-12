@@ -84,7 +84,38 @@
     },
     "projects": {
       "title": "Featured projects",
-      "description": "I'm preparing this section to showcase my projects and the process behind each one."
+      "description": "Within the process of growing my professional career, I can not only show you my work experience, but I must also show you the projects that I have developed in my free time or as part of my training as a professional.",
+      "previewUnavailable": "Preview unavailable",
+      "technologies": "Technologies used",
+      "projectActions": "Project links",
+      "viewProject": "View project",
+      "viewDesign": "View design",
+      "projects": {
+        "Svalinn": {
+          "title": "Svalinn Cybersecurity Landing Page",
+          "description": "Svalinn is a cybersecurity company that offers consulting services and security solutions for businesses. The project consisted of designing and developing the company's landing page, ensuring an intuitive and accessible user experience."
+        },
+        "AI Alpha Analytics": {
+          "title": "AI Alpha Analytics Landing Page and Brand Identity",
+          "description": "AI Alpha Analytics is a technology company specialized in developing advanced AI-driven solutions aimed at addressing complex challenges and enhancing efficiency in the healthcare and digital rehabilitation sectors. The project involved designing and developing the company's landing page, along with creating its brand identity, logos, and brand manual, ensuring an intuitive and accessible user experience."
+        },
+        "AgileFlow UV": {
+          "title": "AgileFlow UV",
+          "description": "AgileFlow UV is a framework that allows students from the University of Valparaíso (UV) to implement agile methodologies in their semester projects. The project involved designing, implementing, and validating this framework, ensuring that teams can manage their projects efficiently and collaboratively in educational environments."
+        },
+        "Eliza's Memories": {
+          "title": "Eliza's Memories",
+          "description": "Interactive visual novel and narrative adventure that takes players through the memories and correspondence of Elizabeth Schuyler Hamilton. Set in temporal jumps from the revolutionary camps of 1780 to mid-19th century New York. A demo developed to familiarize myself with game development and interactive storytelling."
+        },
+        "Turin!": {
+          "title": "Turin! | Interior Tourism",
+          "description": "Multi-platform mobile application developed with Flutter, designed to provide users with an interactive and personalized tourism experience. The project is still in development but focuses on offering detailed information about tourist destinations, activities, and local services, with an emphasis on accessibility and usability."
+        },
+        "Portfolio": {
+          "title": "Personal Portfolio",
+          "description": "Personal portfolio developed with Angular, designed to showcase projects, experience, and skills in a clear and attractive manner. The project includes interactive sections and a responsive design that adapts to different devices."
+        }
+      }
     },
     "contact": {
       "title": "Let's talk",
@@ -119,11 +150,18 @@
         "description": "A comprehensive approach to the product lifecycle: interactive prototyping in Figma under accessibility criteria (WCAG), agile workflows (Scrum / Kanban), and continuous deployment in the cloud with AWS and Docker services."
       }
     },
-    "tech": {
+    "labels": {
       "kanban": "Kanban",
       "microservices": "Microservices",
       "projectManagement": "Project Management",
       "react": "React",
+      "angular": "Angular",
+      "tailwind": "Tailwind",
+      "sass": "Sass",
+      "typescript": "TypeScript",
+      "javascript": "JavaScript",
+      "html": "HTML",
+      "css": "CSS",
       "vue": "Vue 3",
       "nestjs": "NestJS",
       "aws": "AWS",
@@ -136,8 +174,12 @@
       "webDev": "Web Development",
       "branding": "Branding",
       "bim": "BIM",
+      "node": "Node.js",
+      "python": "Python",
       "documentation": "Documentation",
-      "mic365": "Microsoft 365"
+      "mic365": "Microsoft 365",
+      "education": "Education",
+      "dataScience": "Data Science"
     }
   }
 }

@@ -58,9 +58,9 @@ export class ExperienceTimelineComponent {
       subtitleKey: 'sections.experience.milestones.internship.subtitle',
       descriptionKey: 'sections.experience.milestones.internship.description1',
       techTags: [
-        { labelKey: 'tech.bim', iconUrl: 'assets/icons/tech/bim.svg' },
-        { labelKey: 'tech.documentation', iconUrl: 'assets/icons/tech/doc.svg' },
-        { labelKey: 'tech.mic365', iconUrl: 'assets/icons/tech/microsoft.svg' },
+        { labelKey: 'labels.bim', iconUrl: 'assets/icons/tech/bim.svg' },
+        { labelKey: 'labels.documentation', iconUrl: 'assets/icons/tech/doc.svg' },
+        { labelKey: 'labels.mic365', iconUrl: 'assets/icons/tech/microsoft.svg' },
       ],
     },
     {
@@ -70,11 +70,11 @@ export class ExperienceTimelineComponent {
       subtitleKey: 'sections.experience.milestones.internship.subtitle2',
       descriptionKey: 'sections.experience.milestones.internship.description2',
       techTags: [
-        { labelKey: 'tech.webDev' },
-        { labelKey: 'tech.branding' },
-        { labelKey: 'tech.vue', iconUrl: 'assets/icons/tech/vue.svg' },
-        { labelKey: 'tech.node', iconUrl: 'assets/icons/tech/node.svg' },
-        { labelKey: 'tech.aws', iconUrl: 'assets/icons/tech/aws.svg' },
+        { labelKey: 'labels.webDev' },
+        { labelKey: 'labels.branding' },
+        { labelKey: 'labels.vue', iconUrl: 'assets/icons/tech/vue.svg' },
+        { labelKey: 'labels.node', iconUrl: 'assets/icons/tech/node.svg' },
+        { labelKey: 'labels.aws', iconUrl: 'assets/icons/tech/aws.svg' },
       ],
     },
     {
@@ -84,10 +84,10 @@ export class ExperienceTimelineComponent {
       subtitleKey: 'sections.experience.milestones.ux_ui.subtitle',
       descriptionKey: 'sections.experience.milestones.ux_ui.description',
       techTags: [
-        { labelKey: 'tech.figma', iconUrl: 'assets/icons/tech/figma.svg' },
-        { labelKey: 'tech.uxui' },
-        { labelKey: 'tech.wcag' },
-        { labelKey: 'tech.canva', iconUrl: 'assets/icons/tech/canva.svg' },
+        { labelKey: 'labels.figma', iconUrl: 'assets/icons/tech/figma.svg' },
+        { labelKey: 'labels.uxui' },
+        { labelKey: 'labels.wcag' },
+        { labelKey: 'labels.canva', iconUrl: 'assets/icons/tech/canva.svg' },
       ],
     },
     {
@@ -97,10 +97,10 @@ export class ExperienceTimelineComponent {
       subtitleKey: 'sections.experience.milestones.fullstack.subtitle',
       descriptionKey: 'sections.experience.milestones.fullstack.description',
       techTags: [
-        { labelKey: 'tech.vue', iconUrl: 'assets/icons/tech/vue.svg' },
-        { labelKey: 'tech.node', iconUrl: 'assets/icons/tech/node.svg' },
-        { labelKey: 'tech.aws', iconUrl: 'assets/icons/tech/aws.svg' },
-        { labelKey: 'tech.flutter', iconUrl: 'assets/icons/tech/flutter.svg' },
+        { labelKey: 'labels.vue', iconUrl: 'assets/icons/tech/vue.svg' },
+        { labelKey: 'labels.node', iconUrl: 'assets/icons/tech/node.svg' },
+        { labelKey: 'labels.aws', iconUrl: 'assets/icons/tech/aws.svg' },
+        { labelKey: 'labels.flutter', iconUrl: 'assets/icons/tech/flutter.svg' },
       ],
     },
     {
@@ -110,9 +110,9 @@ export class ExperienceTimelineComponent {
       subtitleKey: 'sections.experience.milestones.fondecyt.subtitle',
       descriptionKey: 'sections.experience.milestones.fondecyt.description',
       techTags: [
-        { labelKey: 'tech.kanban' },
-        { labelKey: 'tech.microservices' },
-        { labelKey: 'tech.projectManagement' },
+        { labelKey: 'labels.kanban' },
+        { labelKey: 'labels.microservices' },
+        { labelKey: 'labels.projectManagement' },
       ],
     },
   ];

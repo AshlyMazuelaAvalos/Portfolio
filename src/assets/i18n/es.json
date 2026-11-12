@@ -80,7 +80,39 @@
     },
     "projects": {
       "title": "Proyectos destacados",
-      "description": "Estoy preparando esta sección para mostrar mis proyectos y el proceso detrás de cada uno."
+      "description": "Dentro del proceso del crecimiento de mi carrera profesional, no solo puedo mostrate mi experiencia laboral, sino que también debo mostrarte los proyectos que he desarrollado en mi tiempo libre o como parte de mi formación como profesional",
+      "descriptionToggle": "Ver descripción del proyecto",
+      "previewUnavailable": "Vista previa no disponible",
+      "technologies": "Tecnologías utilizadas",
+      "projectActions": "Enlaces del proyecto",
+      "viewProject": "Ver proyecto",
+      "viewDesign": "Ver diseño",
+      "projects": {
+        "svalinn": {
+          "title": "LandingPage de Svalinn Cybersecurity",
+          "description": "Svalinn es una empresa de ciberseguridad que ofrece servicios de consultoría y soluciones de seguridad para empresas. El proyecto consistió en diseñar y desarrollar la landing page de la empresa, asegurando una experiencia de usuario intuitiva y accesible."
+        },
+        "aialphaanalytics": {
+          "title": "LandingPage e imagen de marca de AI Alpha Analytics",
+          "description": "AI Alpha Analytics es una empresa de tecnología especializada en el desarrollo de soluciones avanzadas impulsadas por inteligencia artificial (IA), orientada a resolver desafíos complejos y potenciar la eficiencia en el sector de la salud y la rehabilitación digital. El proyecto consistió en diseñar y desarrollar la landing page de la empresa, junto con la creación de su identidad de marca, logotipos y manual de marca, asegurando una experiencia de usuario intuitiva y accesible."
+        },
+        "agileflow": {
+          "title": "AgileFlow UV",
+          "description": "AgileFlow UV es un marco de trabajo que permite a estudiantes de la Universidad de Valparaíso (UV) implementar metodologías ágiles en sus proyectos semestrales. El proyecto consistió en diseñar, implementar y validar este marco de trabajo, asegurando que los equipos puedan gestionar sus proyectos de manera eficiente y colaborativa en entornos educativos."
+        },
+        "elizasmemories": {
+          "title": "Eliza's Memories",
+          "description": "Novela visual interactiva y aventura narrativa que transporta al jugador a través de los recuerdos y la correspondencia de Elizabeth Schuyler Hamilton. Ambientada en saltos temporales que van desde los campamentos revolucionarios de 1780 hasta el Nueva York de mediados del siglo XIX. Demo desarrollado con el fin de familiarizarse con la creación de videojuegos y narrativa interactiva."
+        },
+        "turin": {
+          "title": "Turin! | Turismo al interior",
+          "description": "Aplicación movil multiplataforma desarrollada con Flutter, diseñada para ofrecer a los usuarios una experiencia de turismo interactiva y personalizada. El proyecto aún en desarrollo, pero se centra en proporcionar información detallada sobre destinos turísticos, actividades y servicios locales, con un enfoque en la accesibilidad y la usabilidad."
+        },
+        "portfolio": {
+          "title": "Portfolio Personal",
+          "description": "Portfolio personal desarrollado con Angular, diseñado para mostrar proyectos, experiencia y habilidades de manera clara y atractiva. El proyecto incluye secciones interactivas y un diseño responsivo que se adapta a diferentes dispositivos."
+        }
+      }
     },
     "contact": {
       "title": "Conversemos",
@@ -116,11 +148,18 @@
       }
     }
   },
-  "tech": {
+  "labels": {
     "kanban": "Kanban",
     "microservices": "Microservicios",
     "projectManagement": "Gestión de Proyectos",
     "react": "React",
+    "angular": "Angular",
+    "tailwind": "Tailwind",
+    "sass": "Sass",
+    "typescript": "TypeScript",
+    "javascript": "JavaScript",
+    "html": "HTML",
+    "css": "CSS",
     "vue": "Vue 3",
     "nestjs": "NestJS",
     "aws": "AWS",
@@ -133,7 +172,11 @@
     "webDev": "Desarrollo Web",
     "branding": "Branding",
     "bim": "BIM",
+    "node": "Node.js",
+    "python": "Python",
     "documentation": "Documentación",
-    "mic365": "Microsoft 365"
+    "mic365": "Microsoft 365",
+    "education": "Educación",
+    "dataScience": "Ciencia de Datos"
   }
 }
