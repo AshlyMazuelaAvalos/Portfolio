@@ -11,6 +11,11 @@
   scroll-margin-top: 68px;
 }
 
+.hero-poster {
+  @apply absolute inset-0 z-0 h-full w-full object-cover pointer-events-none opacity-[0.68];
+  object-position: center 46%;
+}
+
 .hero-video {
   @apply absolute inset-0 z-0 h-full w-full object-cover pointer-events-none opacity-[0.68] motion-reduce:hidden;
   object-position: center 46%;
@@ -51,25 +56,6 @@
   & a {
     @apply inline-flex min-h-[42px] w-full max-w-[260px] sm:w-auto items-center justify-center rounded-full border border-transparent px-5 py-[0.65rem] text-[0.8rem] font-bold text-white no-underline transition-[transform,background-color,border-color] duration-160 ease-out hover:opacity-100 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4 motion-reduce:transition-none;
     text-shadow: none;
-  }
-}
-
-.scroll-cue {
-  @apply absolute inset-x-0 bottom-0 z-[2] flex min-h-[48px] items-center justify-center gap-4 text-[#c6c9d2] no-underline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4;
-
-  & span {
-    @apply h-px;
-    width: min(42vw, 420px);
-    background: rgba(198, 201, 210, 0.55);
-  }
-
-  & svg {
-    @apply h-[18px] w-[18px] stroke-current transition-transform duration-160 ease-out motion-reduce:transition-none;
-    stroke-width: 1.4;
-  }
-
-  &:hover svg {
-    @apply translate-y-0.5;
   }
 }
 

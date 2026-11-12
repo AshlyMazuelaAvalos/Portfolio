@@ -26,6 +26,10 @@
               {
                 "glob": "**/*",
                 "input": "src/assets",
+                "ignore": [
+                  "images/projects/AIAlpha/**",
+                  "images/projects/Svalinn/**"
+                ],
                 "output": "/assets/"
               }
             ],

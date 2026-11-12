@@ -1,8 +1,9 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-highlight-card',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './highlight-card.component.html',
   styleUrl: './highlight-card.component.css',
 })

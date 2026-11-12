@@ -1,6 +1,7 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   computed,
   HostListener,
@@ -25,9 +26,9 @@ import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 @Component({
   selector: 'app-navbar',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     RouterLink,
-    CommonModule,
     TranslatePipe,
     ButtonComponent,
     NavbarMobileComponent,

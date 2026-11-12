@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer-mobile',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [TranslatePipe],
   templateUrl: './footer-mobile.component.html',
   styleUrl: './footer-mobile.component.css',

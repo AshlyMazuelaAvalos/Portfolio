@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import {
   experienceCardComponent,
@@ -24,6 +24,7 @@ interface ExperienceInterval {
 @Component({
   selector: 'app-experience-timeline',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [TranslatePipe, experienceCardComponent],
   templateUrl: './experience-timeline.component.html',
   styleUrl: './experience-timeline.component.css',

@@ -1,4 +1,4 @@
-import { Component, computed, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, signal } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { StackPillComponent } from '../stack-pill/stack-pill.component';
 
@@ -10,6 +10,7 @@ export interface experienceTechnology {
 @Component({
   selector: 'app-experience-card',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [StackPillComponent, TranslatePipe],
   templateUrl: './experience-card.component.html',
   styleUrl: './experience-card.component.css',

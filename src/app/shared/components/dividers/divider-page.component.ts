@@ -1,7 +1,8 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-dots-divider',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   template: `
     <div

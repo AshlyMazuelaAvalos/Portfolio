@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { DotsDividerComponent } from '../../shared/components/dividers/divider-page.component';
@@ -12,24 +13,26 @@ import { StackComponent } from '../stack/stack.component';
 @Component({
   selector: 'app-home',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
+    NgOptimizedImage,
     TranslatePipe,
     DividerComponent,
     ButtonComponent,
+    DotsDividerComponent,
     AboutMeComponent,
     StackComponent,
     ExperienceComponent,
     ProjectsComponent,
     ContactComponent,
-    DotsDividerComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  title = 'home.title';
-  subtitle = 'home.subtitle';
-  ctaText = 'home.projectsCta';
+  readonly title = 'home.title';
+  readonly subtitle = 'home.subtitle';
+  readonly ctaText = 'home.projectsCta';
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {

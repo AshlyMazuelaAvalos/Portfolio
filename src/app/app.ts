@@ -1,4 +1,4 @@
-import { Component, inject, PLATFORM_ID } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -8,6 +8,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 @Component({
   selector: 'app-root',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './app.html',
 })

@@ -1,5 +1,12 @@
-import { CommonModule } from '@angular/common';
-import { Component, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Input,
+  Output,
+} from '@angular/core';
 import {
   LucideChevronDown,
   LucideContrast,
@@ -20,8 +27,8 @@ type NavigationItem = { label: string; id: string };
 @Component({
   selector: 'app-navbar-mobile',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    CommonModule,
     RouterLink,
     TranslatePipe,
     LucideChevronDown,

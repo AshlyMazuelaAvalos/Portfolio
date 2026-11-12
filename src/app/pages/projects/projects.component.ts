@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import {
   ProjectDetailCardComponent,
@@ -8,6 +8,7 @@ import {
 @Component({
   selector: 'app-projects',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [ProjectDetailCardComponent, TranslatePipe],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',

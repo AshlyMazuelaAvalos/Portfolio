@@ -1,33 +1,38 @@
 <article class="project-detail-card">
   <div class="project-visual">
-    @if (videoUrl(); as video) {
-      <video
-        class="project-preview"
-        [src]="video"
-        [attr.aria-label]="title()"
-        autoplay
-        muted
-        [muted]="true"
-        loop
-        playsinline
-        preload="auto"
-      ></video>
-    } @else if (imageUrl(); as image) {
-      <img class="project-preview" [src]="image" [alt]="imageAlt() || title()" loading="lazy" />
-    } @else {
-      <div
-        class="project-preview project-preview--placeholder"
-        role="img"
-        [attr.aria-label]="'sections.projects.previewUnavailable' | translate"
-      >
-        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-          <rect x="5" y="7" width="38" height="34" rx="4" stroke="currentColor" stroke-width="2" />
-          <path d="M5 16h38M13 11.5h.02M19 11.5h.02M25 11.5h.02" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-          <path d="m13 33 8-8 5 5 4-4 5 7H13Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-        </svg>
-        <span>{{ 'sections.projects.previewUnavailable' | translate }}</span>
-      </div>
-    }
+    <div class="project-visual-frame">
+      @if (videoUrl(); as video) {
+        <video
+          class="project-preview"
+          [src]="video"
+          [attr.aria-label]="title()"
+          controls
+          playsinline
+          preload="none"
+        ></video>
+      } @else if (imageUrl(); as image) {
+        <img
+          class="project-preview"
+          [ngSrc]="image"
+          [alt]="imageAlt() || title()"
+          fill
+          sizes="(max-width: 560px) calc(100vw - 2rem), (max-width: 800px) 42vw, 30vw"
+        />
+      } @else {
+        <div
+          class="project-preview project-preview--placeholder"
+          role="img"
+          [attr.aria-label]="'sections.projects.previewUnavailable' | translate"
+        >
+          <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="5" y="7" width="38" height="34" rx="4" stroke="currentColor" stroke-width="2" />
+            <path d="M5 16h38M13 11.5h.02M19 11.5h.02M25 11.5h.02" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path d="m13 33 8-8 5 5 4-4 5 7H13Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+          </svg>
+          <span>{{ 'sections.projects.previewUnavailable' | translate }}</span>
+        </div>
+      }
+    </div>
 
     <h3 class="project-title">{{ title() }}</h3>
   </div>

@@ -1,12 +1,22 @@
 <main class="home-page">
   <section id="hero" class="hero">
+    <img
+      class="hero-poster"
+      ngSrc="assets/images/videos/Homebg-poster.jpg"
+      alt=""
+      fill
+      priority
+      sizes="100vw"
+      aria-hidden="true"
+    />
     <video
       class="hero-video"
       autoplay
-      [muted]="true"
+      muted
       loop
       playsinline
-      preload="auto"
+      preload="metadata"
+      poster="assets/images/videos/Homebg-poster.jpg"
       aria-hidden="true"
       tabindex="-1"
     >
@@ -29,13 +39,28 @@
       </div>
     </div>
   </section>
-  <app-about-me />
+
+  @defer (hydrate on viewport) {
+    <app-about-me />
+  }
   <app-dots-divider />
-  <app-stack />
+
+  @defer (hydrate on viewport) {
+    <app-stack />
+  }
   <app-dots-divider />
-  <app-experience />
+
+  @defer (hydrate on viewport) {
+    <app-experience />
+  }
   <app-dots-divider />
-  <app-projects />
+
+  @defer (hydrate on viewport) {
+    <app-projects />
+  }
   <app-dots-divider />
-  <app-contact />
+
+  @defer (hydrate on viewport) {
+    <app-contact />
+  }
 </main>

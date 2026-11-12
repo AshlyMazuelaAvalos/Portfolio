@@ -1,4 +1,12 @@
-import { Injectable, signal, effect, inject, RendererFactory2, PLATFORM_ID } from '@angular/core';
+import {
+  DestroyRef,
+  Injectable,
+  signal,
+  effect,
+  inject,
+  RendererFactory2,
+  PLATFORM_ID,
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 export type BaseTheme = 'dark' | 'light';
@@ -9,6 +17,7 @@ export type BaseTheme = 'dark' | 'light';
 export class ThemeService {
   private renderer = inject(RendererFactory2).createRenderer(null, null);
   private platformId = inject(PLATFORM_ID);
+  private destroyRef = inject(DestroyRef);
   private isBrowser = isPlatformBrowser(this.platformId);
 
   // Estados reactivos
@@ -43,6 +52,14 @@ export class ThemeService {
     } else if (typeof mediaQuery.addListener === 'function') {
       mediaQuery.addListener(handleSystemThemeChange);
     }
+
+    this.destroyRef.onDestroy(() => {
+      if (typeof mediaQuery.removeEventListener === 'function') {
+        mediaQuery.removeEventListener('change', handleSystemThemeChange);
+      } else if (typeof mediaQuery.removeListener === 'function') {
+        mediaQuery.removeListener(handleSystemThemeChange);
+      }
+    });
   }
 
   private getInitialBaseTheme(): BaseTheme {
@@ -64,7 +81,7 @@ export class ThemeService {
     if (!this.isBrowser) return false;
 
     const saved = localStorage.getItem('portfolio-colorblind');
-    return saved ? JSON.parse(saved) : false;
+    return saved === 'true';
   }
 
   /*

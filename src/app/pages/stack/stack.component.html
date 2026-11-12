@@ -5,11 +5,13 @@
     {{ 'sections.stack.description' | translate }}
   </p>
   <div class="w-full overflow-hidden px-4 py-0">
-  <app-tech-orbit
-    class="technology-orbit -mt-6"
-    [label]="'sections.stack.technologies' | translate"
-    [guide]="'sections.stack.guide' | translate"
-    [guide2]="'sections.stack.guide2' | translate"
-  />
+    @defer (hydrate on viewport) {
+      <app-tech-orbit
+        class="technology-orbit -mt-6"
+        [label]="'sections.stack.technologies' | translate"
+        [guide]="'sections.stack.guide' | translate"
+        [guide2]="'sections.stack.guide2' | translate"
+      />
+    }
   </div>
 </section>

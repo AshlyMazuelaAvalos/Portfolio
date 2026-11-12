@@ -3,7 +3,6 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/
 import {
   provideClientHydration,
   withEventReplay,
-  withNoIncrementalHydration,
 } from '@angular/platform-browser';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { provideTranslateService } from '@ngx-translate/core';
@@ -22,7 +21,7 @@ export const appConfig: ApplicationConfig = {
       }),
     ),
     provideHttpClient(withFetch()),
-    provideClientHydration(withEventReplay(), withNoIncrementalHydration()),
+    provideClientHydration(withEventReplay()),
     provideTranslateService({
       loader: provideTranslateHttpLoader({ prefix: 'assets/i18n/', suffix: '.json' }),
       lang: 'es',

@@ -1,4 +1,5 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
 import { StackPillComponent } from '../stack-pill/stack-pill.component';
 
@@ -10,7 +11,8 @@ export interface ProjectTechnology {
 @Component({
   selector: 'app-project-detail-card',
   standalone: true,
-  imports: [StackPillComponent, TranslatePipe],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [NgOptimizedImage, StackPillComponent, TranslatePipe],
   templateUrl: './project-detail-card.component.html',
   styleUrl: './project-detail-card.component.css',
 })
