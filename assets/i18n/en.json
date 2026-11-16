@@ -36,8 +36,17 @@
     "contactCta": "Let's talk",
     "aboutCta": "Get to know me",
     "profileLabel": "Professional profile",
-    "availability": "Available for projects",
-    "role": "Frontend Developer"
+    "carousel": {
+      "label": "Professional profile",
+      "dev": "Developer",
+      "des": "Designer",
+      "ux": "UX",
+      "ui": "UI",
+      "agile": "Agile",
+      "free": "Freelance",
+      "creat": "Creative",
+      "sw-eng": "Software Engineer"
+    }
   },
   "sections": {
     "comingSoon": "Coming soon",
@@ -49,7 +58,14 @@
     },
     "experience": {
       "title": "Knowledge & Academic Background",
-      "description": "Beyond writing code, my time studying computer science and engineering gave me a comprehensive understanding of requirements, data structures, and best practices such as Clean Architecture and DDD. This comprehensive perspective guides my professional career, combining accessible prototyping with modular full-stack development, ranging from native and cross-platform mobile applications to asynchronous processing pipelines. It has also allowed me to gain experience with various tools that facilitate teamwork, such as agile methodologies.",
+      "description": {
+        "text1": "Beyond writing code, my journey through the Computer Science and Software Engineering program has equipped me with a ",
+        "span1": "comprehensive understanding of requirements, data structures, and best practices such as Clean Architecture and DDD.",
+        "text2": "This holistic perspective guides my professional trajectory, connecting",
+        "span2": "accessible prototyping with modular full-stack development, encompassing native and cross-platform mobile applications to asynchronous processing pipelines. ",
+        "text3": "Additionally, it has allowed me to engage with various tools that facilitate teamwork, such as",
+        "span3": "agile methodologies."
+      },
       "instruction": "Click on a timeline period to expand the experience and projects.",
       "timelineTitle": "Work Experience",
       "focusYear": "Focus year",
@@ -66,7 +82,7 @@
         "fullstack": {
           "title": "Full-Stack Developer (Web, Mobile & Cloud)",
           "subtitle": "Independent & AI Alpha Analytics",
-          "description": "Provision of autonomous services in full stack web development using React, Vue 3, Node.js, TypeScript, NestJS, and Python (Flask/FastAPI). Cross-platform mobile app development with Flutter/Dart. Cloud platform configuration, architecture, and deployment via Amazon Web Services (AWS): S3, Amplify. Relational and non-relational database modeling and implementation (PostgreSQL, MySQL, MongoDB), ensuring transactional integrity and query optimization."
+          "description": "Provision of autonomous services in full stack web development using Vue 3, Node.js, JavaScript, NodeJS, and Python (Flask/FastAPI). Cross-platform mobile app development with Flutter/Dart. Cloud platform configuration, architecture, and deployment via Amazon Web Services (AWS): S3, Amplify. Relational database modeling and implementation (PostgreSQL, MySQL), ensuring transactional integrity and query optimization."
         },
         "ux_ui": {
           "title": "UX/UI Designer, Graphic Designer & Web Developer",
@@ -118,8 +134,25 @@
       }
     },
     "contact": {
-      "title": "Let's talk",
-      "description": "Have an idea or opportunity in mind? You can find me here:",
+      "eyebrow": "Contact",
+      "title": "Have an idea or technical challenge? Add a committed, results-driven Full Stack developer to your team.",
+      "formTitle": "Let's talk",
+      "invitation": "If you'd like to discuss an opportunity, a project, or a collaboration, get in touch by sending an email to ashlymazuela@gmail.com or filling out the form on this section.",
+      "availability": "I am currently available to collaborate on high-impact projects, both remotely and in hybrid settings in Chile (Viña del Mar/Santiago).",
+      "name": "Name",
+      "emailLabel": "Email address",
+      "message": "Message",
+      "phone": "Phone",
+      "submit": "Prepare message",
+      "sending": "Sending...",
+      "sendSuccess": "Message sent! Thank you for getting in touch.",
+      "sendError": "The message could not be sent. Please try again.",
+      "clearField": "Clear {{field}} field",
+      "required": "This field is required.",
+      "invalidEmail": "Enter a valid email address.",
+      "emailSubject": "Portfolio contact: {{name}}",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
       "linksLabel": "Contact links",
       "email": "Send me an email"
     }
@@ -127,9 +160,8 @@
   "aboutMe": {
     "eyebrow": "About me",
     "title": "Hi, I'm Ashly",
-    "intro": "Computer Science Engineer focused on FullStack and mobile development.",
     "description": {
-      "text1": "I am passionate about transforming requirements and ideas into",
+      "text1": "As a Computer Science and Software Engineer, I am passionate about transforming requirements and ideas into",
       "span1": " scalable digital solutions ",
       "text2": "connecting ",
       "span2": " people-centered design ",
@@ -147,7 +179,7 @@
       },
       "design": {
         "title": "From design to deployment",
-        "description": "A comprehensive approach to the product lifecycle: interactive prototyping in Figma under accessibility criteria (WCAG), agile workflows (Scrum / Kanban), and continuous deployment in the cloud with AWS and Docker services."
+        "description": " I accompany the complete product lifecycle: from interactive design in Figma to ensure an enjoyable user experience, working with agile workflows (Scrum / Kanban), and continuous deployment of solutions."
       }
     },
     "labels": {
