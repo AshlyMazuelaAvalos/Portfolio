@@ -41,7 +41,11 @@
   gap: 0.75rem;
   border: 1px solid var(--border-subtle);
   background:
-    radial-gradient(ellipse at 50% 35%, color-mix(in srgb, var(--btn-primary-bg) 28%, transparent), transparent 68%),
+    radial-gradient(
+      ellipse at 50% 35%,
+      color-mix(in srgb, var(--btn-primary-bg) 28%, transparent),
+      transparent 68%
+    ),
     color-mix(in srgb, var(--bg-canvas) 72%, var(--card-bg));
   color: var(--text-secondary);
   font-size: 0.875rem;
@@ -72,10 +76,6 @@
 .project-description {
   margin: 0;
   color: var(--text-primary);
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  font-weight: 600;
-  line-height: 1.65;
-  overflow-wrap: anywhere;
 }
 
 .project-description-accordion {

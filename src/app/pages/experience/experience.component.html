@@ -8,7 +8,19 @@
     <div class="introduction-avatar" aria-hidden="true">
       <img ngSrc="assets/images/Me.jpeg" width="170" height="170" alt="" />
     </div>
-    <p>{{ 'sections.experience.description' | translate }}</p>
+    <p>{{ 'sections.experience.description.text1' | translate }}
+      <span class="span-text">
+        {{ 'sections.experience.description.span1' | translate }}
+      </span>
+      {{ 'sections.experience.description.text2' | translate }}
+      <span class="span-text">
+        {{ 'sections.experience.description.span2' | translate }}
+      </span>
+      {{ 'sections.experience.description.text3' | translate }}
+      <span class="span-text">
+        {{ 'sections.experience.description.span3' | translate }}
+      </span>
+    </p>
   </div>
 
   <app-experience-timeline />

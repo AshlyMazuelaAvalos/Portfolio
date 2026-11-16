@@ -38,11 +38,7 @@
 .experience-copy h3 {
   margin: 0 0 0.75rem;
   color: var(--card-text);
-  font-size: clamp(
-    1.25rem,
-    2.5vw,
-    1.75rem
-  ); /* Reducido ligeramente para que respiren mejor en 2 columnas */
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   line-height: 1.3;
 }
 

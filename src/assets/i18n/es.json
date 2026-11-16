@@ -35,8 +35,17 @@
     "description": "Construyo arquitecturas de software escalables e interfaces intuitivas, desde el diseño en Figma hasta el despliegue.",
     "contactCta": "Conversemos",
     "aboutCta": "Conozcámonos",
-    "availability": "Disponible para proyectos",
-    "role": "Desarrolladora Frontend"
+    "carousel": {
+      "label": "Perfil profesional",
+      "dev": "Desarrolladora",
+      "des": "Diseñadora",
+      "ux": "UX",
+      "ui": "UI",
+      "agile": "Ágil",
+      "free": "Freelance",
+      "creat": "Creativa",
+      "sw-eng": "Ingeniera de Software"
+    }
   },
   "sections": {
     "comingSoon": "Próximamente",
@@ -48,7 +57,14 @@
     },
     "experience": {
       "title": "Conocimientos & Formación Académica",
-      "description": "Más allá de la escritura de código, mi paso por la carrera de ingeniería civil informática me formó en la comprensión integral de requerimientos, estructuras de datos y buenas prácticas como Clean Architecture y DDD. Esta visión integral guía mi trayectoria laboral, uniendo prototipado accesible con desarrollo full stack modular, abarcando desde aplicaciones móviles nativas y multiplataforma hasta pipelines de procesamiento asíncrono. Además me permitió acercarme a distintas herramientas que permiten trabajar en equipo como metodologías ágiles.",
+      "description": {
+        "text1": "Más allá de la escritura de código, mi paso por la carrera de ingeniería civil informática me formó en la ",
+        "span1": "comprensión integral de requerimientos, estructuras de datos y buenas prácticas como Clean Architecture y DDD.",
+        "text2": "Esta visión integral guía mi trayectoria laboral, uniendo",
+        "span2": "prototipado accesible con desarrollo full stack modular, abarcando desde aplicaciones móviles nativas y multiplataforma hasta pipelines de procesamiento asíncrono. ",
+        "text3": "Además me permitió acercarme a distintas herramientas que permiten trabajar en equipo como",
+        "span3": "metodologías ágiles."
+      },
       "instruction": "Haz clic en un periodo de la línea para desplegar la experiencia y proyectos.",
       "timelineTitle": "Experiencia Laboral",
       "showDescription": "Ver descripción",
@@ -62,7 +78,7 @@
         "fullstack": {
           "title": "Full-Stack Developer (Web, Mobile & Cloud)",
           "subtitle": "Independiente & AI Alpha Analytics",
-          "description": "Prestación de servicios autónomos en desarrollo web full stack utilizando React, Vue 3, Node.js, TypeScript, NestJS y Python (Flask/FastAPI). Desarrollo de aplicaciones móviles multiplataforma con Flutter/Dart. Configuración, arquitectura y despliegue de plataformas en entornos cloud mediante Amazon Web Services (AWS): S3, Amplify. . Modelado e implementación de bases de datos relacionales y no relacionales (PostgreSQL, MySQL, MongoDB), garantizando integridad transaccional y optimización de consultas."
+          "description": "Prestación de servicios autónomos en desarrollo web full stack utilizando Vue 3, Node.js, JavaScript, NodeJS y Python (Flask/FastAPI). Desarrollo de aplicaciones móviles multiplataforma con Flutter/Dart. Configuración, arquitectura y despliegue de plataformas en entornos cloud mediante Amazon Web Services (AWS): S3, Amplify. Modelado e implementación de bases de datos relacionales (PostgreSQL, MySQL), garantizando integridad transaccional y optimización de consultas."
         },
         "ux_ui": {
           "title": "Diseñadora UX/UI, Gráfica & Desarrolladora Web",
@@ -115,8 +131,25 @@
       }
     },
     "contact": {
-      "title": "Conversemos",
-      "description": "¿Tienes una idea o una oportunidad en mente? Puedes encontrarme aquí:",
+      "eyebrow": "Contacto",
+      "title": "¿Tienes una idea o desafío técnico? Suma a tu equipo una desarrolladora Full Stack comprometida y orientada a resultados.",
+      "formTitle": "Hablemos",
+      "invitation": "Si quieres conversar sobre una oportunidad, un proyecto o una colaboración, escríbeme a ashlymazuela@gmail.com, o respondiendo el formulario de esta sección.",
+      "availability": "Actualmente cuento con disponibilidad inmediata para colaborar en proyectos de alto impacto, tanto en modalidad remota como híbrida en Chile (Viña del Mar/Santiago).",
+      "name": "Nombre",
+      "emailLabel": "Correo electrónico",
+      "message": "Mensaje",
+      "phone": "Teléfono",
+      "submit": "Preparar mensaje",
+      "sending": "Enviando...",
+      "sendSuccess": "¡Mensaje enviado! Gracias por ponerte en contacto.",
+      "sendError": "No se pudo enviar el mensaje. Inténtalo nuevamente.",
+      "clearField": "Limpiar el campo {{field}}",
+      "required": "Este campo es obligatorio.",
+      "invalidEmail": "Ingresa un correo electrónico válido.",
+      "emailSubject": "Contacto desde mi portafolio: {{name}}",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
       "linksLabel": "Enlaces de contacto",
       "email": "Enviarme un correo"
     }
@@ -124,9 +157,8 @@
   "aboutMe": {
     "eyebrow": "Sobre mí",
     "title": "Hola, soy Ashly",
-    "intro": "Ingeniera Civil Informática enfocada en desarrollo Full-Stack, Mobile y experiencia de usuario (UX/UI)",
     "description": {
-      "text1": "Me apasiona transformar requerimientos e ideas en",
+      "text1": "Como Ingeniera Civil Informática, me apasiona transformar requerimientos e ideas en",
       "span1": " soluciones digitales escalables ",
       "text2": "conectando el",
       "span2": " diseño centrado en las personas ",
@@ -144,7 +176,7 @@
       },
       "design": {
         "title": "Del diseño al despliegue",
-        "description": "Acompaño el ciclo de vida completo del producto: prototipado interactivo en Figma bajo criterios de accesibilidad (WCAG), flujos ágiles (Scrum / Kanban) y despliegue continuo en la nube con servicios de AWS y Docker."
+        "description": "Acompaño el ciclo de vida completo del producto: Desde el diseño interactivo en Figma para asegurar una experiencia de usuario disfrutable, trabajando además con flujos ágiles (Scrum / Kanban) y despliegue continuo de soluciones."
       }
     }
   },

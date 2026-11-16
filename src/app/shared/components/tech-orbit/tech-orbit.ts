@@ -1,4 +1,17 @@
-import { ChangeDetectionStrategy, Component, computed, input, signal } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  HostListener,
+  OnDestroy,
+  PLATFORM_ID,
+  computed,
+  inject,
+  input,
+  signal,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 export interface Technology {
   readonly id: string;
@@ -126,19 +139,25 @@ const ORBIT_CONFIG: readonly OrbitConfig[] = [
   templateUrl: './tech-orbit.html',
   styleUrl: './tech-orbit.css',
 })
-export class TechOrbit {
+export class TechOrbit implements AfterViewInit, OnDestroy {
+  private readonly elementRef = inject(ElementRef<HTMLElement>);
+  private readonly platformId = inject(PLATFORM_ID);
+  private visibilityObserver: IntersectionObserver | null = null;
+  private tooltipShowTimer: ReturnType<typeof setTimeout> | null = null;
+  private tooltipHideTimer: ReturnType<typeof setTimeout> | null = null;
+
   readonly technologies = input<readonly Technology[]>(DEFAULT_TECHNOLOGIES);
   readonly label = input('Ecosistema tecnológico');
   readonly guide = input('');
   readonly guide2 = input('');
   readonly hoveredTechnologyId = signal<string | null>(null);
   readonly selectedTechnologyId = signal<string | null>(null);
-  readonly stageHovered = signal(false);
+  readonly initialBubbleTooltipVisible = signal(false);
 
   readonly activeTechnologyId = computed(
     () => this.hoveredTechnologyId() ?? this.selectedTechnologyId(),
   );
-  readonly paused = computed(() => this.stageHovered() || this.activeTechnologyId() !== null);
+  readonly paused = computed(() => this.activeTechnologyId() !== null);
   readonly selectedTechnology = computed(
     () => this.technologies().find((t) => t.id === this.selectedTechnologyId()) ?? null,
   );
@@ -161,7 +180,60 @@ export class TechOrbit {
     }));
   });
 
+  ngAfterViewInit(): void {
+    if (!isPlatformBrowser(this.platformId) || typeof IntersectionObserver === 'undefined') {
+      return;
+    }
+
+    this.visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          this.visibilityObserver?.disconnect();
+          this.tooltipShowTimer = setTimeout(() => {
+            this.initialBubbleTooltipVisible.set(true);
+            this.tooltipHideTimer = setTimeout(
+              () => this.initialBubbleTooltipVisible.set(false),
+              4500,
+            );
+          }, 300);
+        }
+      },
+      { threshold: 0.25 },
+    );
+    this.visibilityObserver.observe(this.elementRef.nativeElement);
+  }
+
+  ngOnDestroy(): void {
+    this.visibilityObserver?.disconnect();
+    this.clearInitialTooltipTimers();
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    this.dismissInitialBubbleTooltip();
+
+    if (!(event.target instanceof Element) || !event.target.closest('.satellite-button')) {
+      this.selectedTechnologyId.set(null);
+    }
+  }
+
   toggleTechnology(id: string): void {
     this.selectedTechnologyId.update((selectedId) => (selectedId === id ? null : id));
+  }
+
+  dismissInitialBubbleTooltip(): void {
+    this.initialBubbleTooltipVisible.set(false);
+    this.clearInitialTooltipTimers();
+  }
+
+  private clearInitialTooltipTimers(): void {
+    if (this.tooltipShowTimer !== null) {
+      clearTimeout(this.tooltipShowTimer);
+      this.tooltipShowTimer = null;
+    }
+    if (this.tooltipHideTimer !== null) {
+      clearTimeout(this.tooltipHideTimer);
+      this.tooltipHideTimer = null;
+    }
   }
 }

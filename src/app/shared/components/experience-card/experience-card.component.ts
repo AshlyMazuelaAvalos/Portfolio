@@ -18,7 +18,6 @@ export interface experienceTechnology {
 export class experienceCardComponent {
   title = input.required<string>();
   description = input.required<string>();
-  descriptionId = input.required<string>();
   technologies = input<readonly experienceTechnology[]>([]);
   techTags = input<readonly experienceTechnology[] | undefined>();
   date = input<string | undefined>();
@@ -28,6 +27,12 @@ export class experienceCardComponent {
 
   readonly descriptionExpanded = signal(false);
   readonly displayedTechTags = computed(() => this.techTags() ?? this.technologies());
+  readonly descriptionPreview = computed(() => {
+    const description = this.description().trim();
+    const words = description.split(/\s+/);
+
+    return words.length > 8 ? `${words.slice(0, 8).join(' ')}...` : description;
+  });
 
   toggleDescription(): void {
     this.descriptionExpanded.update((expanded) => !expanded);

@@ -65,15 +65,13 @@
 
                 <!-- Tooltip con visibilidad forzada mediante la señal activa -->
                 <span
-                  class="satellite-tooltip pointer-events-none absolute top-full z-20 mt-2 origin-top whitespace-nowrap rounded-full border border-white/20 px-3 py-1 text-xs font-medium text-white shadow-[0_0_18px_rgba(226,232,240,0.35)] backdrop-blur-md transition-all duration-200"
+                  class="satellite-tooltip pointer-events-none absolute left-1/2 top-full z-20 mt-2 whitespace-nowrap rounded-full border border-white/20 px-3 py-1 text-xs font-medium text-white shadow-[0_0_18px_rgba(226,232,240,0.35)] transition-[opacity,transform] duration-200"
                   [class.opacity-100]="activeTechnologyId() === item.technology.id"
-                  [class.scale-100]="activeTechnologyId() === item.technology.id"
                   [class.opacity-0]="activeTechnologyId() !== item.technology.id"
-                  [class.scale-75]="activeTechnologyId() !== item.technology.id"
                   [id]="'tech-tooltip-' + item.technology.id"
                   role="tooltip"
                 >
-                  {{ item.technology.level + ' | '}}
+                  {{'lvl. ' + item.technology.level + ' | '}}
                   {{ item.technology.name + ' | '}}
                   @if (item.technology.category) {
                     <small class="ml-2 text-[10px] uppercase tracking-wider text-rose-200/70">
@@ -88,13 +86,11 @@
       </div>
     }
 
-    <!-- Burbuja central con evento hover opcional para pausar solo si se desea -->
     <div
       class="bubble-container absolute left-1/2 top-1/2 z-10 h-[32%] w-[32%] -translate-x-1/2 -translate-y-1/2"
-      (mouseenter)="stageHovered.set(true)"
-      (mouseleave)="stageHovered.set(false)"
-      (focusin)="stageHovered.set(true)"
-      (focusout)="stageHovered.set(false)"
+      [class.is-initially-visible]="initialBubbleTooltipVisible()"
+      (pointerdown)="dismissInitialBubbleTooltip()"
+      (focusin)="dismissInitialBubbleTooltip()"
     >
       <div
         class="bubble pointer-events-auto relative flex h-full w-full cursor-pointer items-center justify-center rounded-full transition-transform duration-300 hover:scale-95"
@@ -109,8 +105,8 @@
         />
       </div>
       <span class="bubble-tooltip" id="tech-orbit-guide-tooltip" role="tooltip">
-        <span>{{ guide() }}</span>
         <span>{{ guide2() }}</span>
+        <span>{{ guide() }}</span>
       </span>
     </div>
   </div>

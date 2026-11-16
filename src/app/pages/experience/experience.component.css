@@ -13,7 +13,10 @@
   @apply mb-3 text-xs font-bold uppercase tracking-[0.18em];
   color: var(--btn-primary-bg);
 }
-
+.span-text {
+  @apply font-bold;
+  color: var(--chip-bg);
+}
 .section-heading h2 {
   @apply m-0 text-3xl leading-tight sm:text-4xl;
   color: var(--text-primary);

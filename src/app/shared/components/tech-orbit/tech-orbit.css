@@ -30,6 +30,11 @@
   border: 1px solid var(--border-subtle);
   background-color: var(--color-navy-dark);
 }
+
+.satellite-tooltip {
+  transform: translateX(-50%) translateY(-0.25rem);
+}
+
 .satellite-button {
   padding: 0;
   border: 1.5px solid color-mix(in srgb, var(--btn-primary-bg) 40%, var(--border-subtle));
@@ -51,13 +56,9 @@
   -webkit-mask: var(--icon-mask) center / contain no-repeat;
 }
 
-.satellite-button.is-active + .satellite-tooltip,
 .satellite-tooltip.opacity-100 {
   opacity: 1;
-  transform: translateX(-50%) scale(0.65);
-  transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* --- Burbuja Central Optimizada --- */
@@ -93,7 +94,7 @@
   width: max-content;
   gap: 0.25rem;
   padding: 0.615rem 0.875rem;
-  transform: translate(-50%, -0.25rem);
+  transform: translate(-50%, 0);
   border: 1px solid var(--border-subtle);
   border-radius: 0.75rem;
   background-color: var(--card-bg);
@@ -107,6 +108,10 @@
     transform 0.2s ease;
 }
 
+.bubble-container.is-initially-visible .bubble-tooltip {
+  opacity: 1;
+}
+
 @media (max-width: 640px) {
   .bubble-logo {
     width: 62%;
@@ -114,10 +119,13 @@
   }
 
   .bubble-tooltip {
-    top: -6rem;
-    max-width: calc(100vw - 3rem);
-    overflow-wrap: anywhere;
+    top: calc(100% - 11rem);
+    left: 50%;
+    width: max-content;
+    max-width: calc(100vw - 5rem);
+    padding: 0.62rem 0.72rem;
     font-size: 0.5rem;
+    line-height: 1.4;
   }
 }
 

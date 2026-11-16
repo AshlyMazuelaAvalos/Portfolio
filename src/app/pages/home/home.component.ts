@@ -3,7 +3,6 @@ import { NgOptimizedImage } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { DotsDividerComponent } from '../../shared/components/dividers/divider-page.component';
-import { DividerComponent } from '../../shared/components/dividers/divider.component';
 import { AboutMeComponent } from '../about-me/about-me.component';
 import { ContactComponent } from '../contact/contact.component';
 import { ExperienceComponent } from '../experience/experience.component';
@@ -17,7 +16,6 @@ import { StackComponent } from '../stack/stack.component';
   imports: [
     NgOptimizedImage,
     TranslatePipe,
-    DividerComponent,
     ButtonComponent,
     DotsDividerComponent,
     AboutMeComponent,
@@ -32,7 +30,17 @@ import { StackComponent } from '../stack/stack.component';
 export class HomeComponent {
   readonly title = 'home.title';
   readonly subtitle = 'home.subtitle';
-  readonly ctaText = 'home.projectsCta';
+  readonly carouselItems = [
+    'home.carousel.dev',
+    'home.carousel.des',
+    'home.carousel.ux',
+    'home.carousel.ui',
+    'home.carousel.agile',
+    'home.carousel.free',
+    'home.carousel.creat',
+    'home.carousel.sw-eng',
+  ] as const;
+
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {

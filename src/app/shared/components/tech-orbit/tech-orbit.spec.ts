@@ -24,9 +24,9 @@ describe('TechOrbit', () => {
 
     expect(buttons.length).toBe(12);
     expect(buttons[0].getAttribute('aria-label')).toBe('Angular');
-    expect(
-      fixture.nativeElement.querySelectorAll('.satellite-button span svg').length,
-    ).toBe(12);
+    expect(fixture.nativeElement.querySelectorAll('.satellite-button .satellite-icon').length).toBe(
+      12,
+    );
   });
 
   it('should show both guide texts in the central sphere tooltip', () => {
@@ -49,13 +49,23 @@ describe('TechOrbit', () => {
 
     expect(button.getAttribute('aria-pressed')).toBe('true');
     expect(fixture.nativeElement.textContent).toContain('Angular seleccionado');
-    expect(fixture.nativeElement.querySelector('.orbit-stage').classList).toContain(
-      'is-paused',
-    );
+    expect(fixture.nativeElement.querySelector('[role="group"]').classList).toContain('is-paused');
 
     button.click();
     fixture.detectChanges();
 
     expect(button.getAttribute('aria-pressed')).toBe('false');
+  });
+
+  it('should resume orbit movement when clicking outside the technology orbs', () => {
+    const button: HTMLButtonElement = fixture.nativeElement.querySelector('button');
+    button.click();
+    fixture.detectChanges();
+
+    document.body.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    fixture.detectChanges();
+
+    expect(component.selectedTechnologyId()).toBeNull();
+    expect(component.paused()).toBe(false);
   });
 });

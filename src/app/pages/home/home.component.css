@@ -6,6 +6,7 @@
 
 .hero {
   @apply relative grid place-items-center overflow-hidden isolate text-center text-[#f4f5f9];
+  grid-template-columns: minmax(0, 1fr);
   min-height: max(500px, calc(110svh - 68px));
   background: var(--color-slate-900);
   scroll-margin-top: 68px;
@@ -31,6 +32,7 @@
 .hero-copy {
   @apply relative z-[2] mt-24 pb-20 sm:pb-24;
   width: min(760px, calc(100% - 2.5rem));
+  min-width: 0;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
 
   & h1 {
@@ -49,6 +51,16 @@
   font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
+.home-carousel {
+  width: 100vw;
+  margin: 1.5rem calc(50% - 50vw);
+  padding-inline: 1rem;
+}
+
+.home-carousel-track {
+  animation: home-carousel-scroll 28s linear infinite;
+}
+
 .actions {
   @apply mt-12 flex flex-col items-center gap-[0.8rem] sm:flex-row sm:justify-center;
   gap: clamp(1rem, 5vw, 4rem);
@@ -56,6 +68,18 @@
   & a {
     @apply inline-flex min-h-[42px] w-full max-w-[260px] sm:w-auto items-center justify-center rounded-full border border-transparent px-5 py-[0.65rem] text-[0.8rem] font-bold text-white no-underline transition-[transform,background-color,border-color] duration-160 ease-out hover:opacity-100 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4 motion-reduce:transition-none;
     text-shadow: none;
+  }
+}
+
+@keyframes home-carousel-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-carousel-track {
+    animation: none;
   }
 }
 

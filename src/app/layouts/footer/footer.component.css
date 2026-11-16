@@ -1,36 +1,83 @@
-@reference '../../../assets/styles/base.css';
-
-.footer-desktop {
-  display: block;
-}
-
-.footer-mobile {
-  display: none;
-}
-
 .site-footer {
-  @apply border-t border-[var(--border-subtle)] px-6 py-0 sm:px-10;
-  @apply mx-auto flex max-h-full flex-col gap-1 border-t border-[var(--border-subtle)] pt-0 sm:flex-row sm:items-center sm:justify-between;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 0.75rem 1rem;
+  border-top: 1px solid var(--border-subtle);
   background: var(--color-navy-dark);
   color: var(--color-white);
+  text-align: center;
 }
-.site-footer p {
-  @apply mx-0 mb-0;
-  color: var(--color-white);
+
+.footer-copy p {
+  margin: 0;
+  color: inherit;
+  font-size: 0.625rem;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .footer-mark {
-  @apply h-9 w-9 mb-0 shrink-0 bg-current text-[0.2rem];
-  mask: url('../../../assets/icons/favicon.svg') center / contain no-repeat;
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 
-@media (max-width: 1024px) {
-  .footer-desktop {
-    display: none;
+.footer-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--color-lavender-soft);
+}
+
+.footer-socials a {
+  display: inline-flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  color: inherit;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.footer-socials a:hover {
+  background: rgb(255 255 255 / 10%);
+  color: var(--color-white);
+}
+
+.footer-socials a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.footer-socials svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+@media (min-width: 1025px) {
+  .site-footer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 1rem;
+    padding: 0.75rem 1.25rem;
+    text-align: left;
   }
 
-  app-footer-mobile.footer-mobile {
-    display: block;
+  .footer-mark {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .footer-socials {
+    justify-content: flex-end;
   }
 }
