@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, inject, PLATFORM_ID } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, PLATFORM_ID, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { NavbarComponent } from './layouts/navbar/navbar';
 import { FooterComponent } from './layouts/footer/footer.component';
 
@@ -9,12 +9,19 @@ import { FooterComponent } from './layouts/footer/footer.component';
   selector: 'app-root',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterOutlet, NavbarComponent, FooterComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, TranslatePipe],
   templateUrl: './app.html',
+  styleUrl: './app.css',
 })
 export class App {
+  readonly isLoading = signal(true);
+
   private translate = inject(TranslateService);
   private platformId = inject(PLATFORM_ID);
+  private readonly loadingStartedAt = Date.now();
+  private initialRouteActivated = false;
+  private fontsLoaded = false;
+  private loaderDismissalScheduled = false;
 
   constructor() {
     this.translate.addLangs(['es', 'en']);
@@ -25,6 +32,35 @@ export class App {
       const initialLang = savedLang === 'en' || savedLang === 'es' ? savedLang : browserLang;
 
       this.translate.use(initialLang);
+
+      void document.fonts.ready.then(() => {
+        this.fontsLoaded = true;
+        this.dismissLoaderWhenReady();
+      });
     }
+  }
+
+  onRouteActivated(): void {
+    if (this.initialRouteActivated) {
+      return;
+    }
+
+    this.initialRouteActivated = true;
+    this.dismissLoaderWhenReady();
+  }
+
+  private dismissLoaderWhenReady(): void {
+    if (!this.initialRouteActivated || !this.fontsLoaded || this.loaderDismissalScheduled) {
+      return;
+    }
+
+    this.loaderDismissalScheduled = true;
+    const minimumDisplayTime = 750;
+    const remainingDisplayTime = Math.max(
+      0,
+      minimumDisplayTime - (Date.now() - this.loadingStartedAt),
+    );
+
+    window.setTimeout(() => this.isLoading.set(false), remainingDisplayTime);
   }
 }

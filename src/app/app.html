@@ -1,3 +1,14 @@
+@if (isLoading()) {
+  <div class="app-loader" role="status" aria-live="polite">
+    <div class="loader-orbit" aria-hidden="true">
+      <span class="loader-orbit__ring loader-orbit__ring--outer"></span>
+      <span class="loader-orbit__ring loader-orbit__ring--inner"></span>
+      <img class="loader-mark" src="assets/icons/favicon.svg" alt="" aria-hidden="true" />
+    </div>
+    <p class="loader-message">{{ 'loading.message' | translate }}</p>
+    <span class="loader-progress" aria-hidden="true"></span>
+  </div>
+}
 <app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<router-outlet (activate)="onRouteActivated()"></router-outlet>
 <app-footer></app-footer>
