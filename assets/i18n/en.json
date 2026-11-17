@@ -13,6 +13,9 @@
   "brand": {
     "role": "Software Engineer"
   },
+  "loading": {
+    "message": "Preparing your experience..."
+  },
   "settings": {
     "theme": "Theme settings",
     "darkMode": "Dark mode",
@@ -107,27 +110,27 @@
       "viewProject": "View project",
       "viewDesign": "View design",
       "projects": {
-        "Svalinn": {
+        "svalinn": {
           "title": "Svalinn Cybersecurity Landing Page",
           "description": "Svalinn is a cybersecurity company that offers consulting services and security solutions for businesses. The project consisted of designing and developing the company's landing page, ensuring an intuitive and accessible user experience."
         },
-        "AI Alpha Analytics": {
+        "aialphaanalytics": {
           "title": "AI Alpha Analytics Landing Page and Brand Identity",
           "description": "AI Alpha Analytics is a technology company specialized in developing advanced AI-driven solutions aimed at addressing complex challenges and enhancing efficiency in the healthcare and digital rehabilitation sectors. The project involved designing and developing the company's landing page, along with creating its brand identity, logos, and brand manual, ensuring an intuitive and accessible user experience."
         },
-        "AgileFlow UV": {
+        "agileflow": {
           "title": "AgileFlow UV",
           "description": "AgileFlow UV is a framework that allows students from the University of Valparaíso (UV) to implement agile methodologies in their semester projects. The project involved designing, implementing, and validating this framework, ensuring that teams can manage their projects efficiently and collaboratively in educational environments."
         },
-        "Eliza's Memories": {
+        "elizasmemories": {
           "title": "Eliza's Memories",
           "description": "Interactive visual novel and narrative adventure that takes players through the memories and correspondence of Elizabeth Schuyler Hamilton. Set in temporal jumps from the revolutionary camps of 1780 to mid-19th century New York. A demo developed to familiarize myself with game development and interactive storytelling."
         },
-        "Turin!": {
+        "turin": {
           "title": "Turin! | Interior Tourism",
           "description": "Multi-platform mobile application developed with Flutter, designed to provide users with an interactive and personalized tourism experience. The project is still in development but focuses on offering detailed information about tourist destinations, activities, and local services, with an emphasis on accessibility and usability."
         },
-        "Portfolio": {
+        "portfolio": {
           "title": "Personal Portfolio",
           "description": "Personal portfolio developed with Angular, designed to showcase projects, experience, and skills in a clear and attractive manner. The project includes interactive sections and a responsive design that adapts to different devices."
         }
@@ -181,37 +184,37 @@
         "title": "From design to deployment",
         "description": " I accompany the complete product lifecycle: from interactive design in Figma to ensure an enjoyable user experience, working with agile workflows (Scrum / Kanban), and continuous deployment of solutions."
       }
-    },
-    "labels": {
-      "kanban": "Kanban",
-      "microservices": "Microservices",
-      "projectManagement": "Project Management",
-      "react": "React",
-      "angular": "Angular",
-      "tailwind": "Tailwind",
-      "sass": "Sass",
-      "typescript": "TypeScript",
-      "javascript": "JavaScript",
-      "html": "HTML",
-      "css": "CSS",
-      "vue": "Vue 3",
-      "nestjs": "NestJS",
-      "aws": "AWS",
-      "flutter": "Flutter",
-      "kotlin": "Kotlin",
-      "figma": "Figma",
-      "uxui": "UX/UI",
-      "wcag": "WCAG",
-      "canva": "Canva",
-      "webDev": "Web Development",
-      "branding": "Branding",
-      "bim": "BIM",
-      "node": "Node.js",
-      "python": "Python",
-      "documentation": "Documentation",
-      "mic365": "Microsoft 365",
-      "education": "Education",
-      "dataScience": "Data Science"
     }
+  },
+  "labels": {
+    "kanban": "Kanban",
+    "microservices": "Microservices",
+    "projectManagement": "Project Management",
+    "react": "React",
+    "angular": "Angular",
+    "tailwind": "Tailwind",
+    "sass": "Sass",
+    "typescript": "TypeScript",
+    "javascript": "JavaScript",
+    "html": "HTML",
+    "css": "CSS",
+    "vue": "Vue 3",
+    "nestjs": "NestJS",
+    "aws": "AWS",
+    "flutter": "Flutter",
+    "kotlin": "Kotlin",
+    "figma": "Figma",
+    "uxui": "UX/UI",
+    "wcag": "WCAG",
+    "canva": "Canva",
+    "webDev": "Web Development",
+    "branding": "Branding",
+    "bim": "BIM",
+    "node": "Node.js",
+    "python": "Python",
+    "documentation": "Documentation",
+    "mic365": "Microsoft 365",
+    "education": "Education",
+    "dataScience": "Data Science"
   }
 }

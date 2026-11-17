@@ -13,6 +13,9 @@
   "brand": {
     "role": "Ingeniera de Software"
   },
+  "loading": {
+    "message": "Preparando tu experiencia..."
+  },
   "settings": {
     "theme": "Selección de tema",
     "darkMode": "Modo oscuro",
