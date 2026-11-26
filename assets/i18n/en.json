@@ -133,6 +133,10 @@
         "portfolio": {
           "title": "Personal Portfolio",
           "description": "Personal portfolio developed with Angular, designed to showcase projects, experience, and skills in a clear and attractive manner. The project includes interactive sections and a responsive design that adapts to different devices."
+        },
+        "model": {
+          "title": "MODAL4SE LandingPage",
+          "description": "MODAL4SE is a research group at the University of Valparaíso dedicated to model-driven software engineering (MDD) and the integration of generative artificial intelligence. For this project, the team not only designed and implemented the lab’s landing page but also developed its brand identity and various merchandising elements for the Fondecyt Iniciación project."
         }
       }
     },
