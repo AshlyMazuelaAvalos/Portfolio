@@ -135,12 +135,14 @@
     </div>
 
     <aside class="contact-info">
-      <p class="contact-invitation">{{ 'sections.contact.invitation' | translate }}</p>
-      <span
-        class="contact-logo"
-        role="img"
-        aria-hidden="true"
-      ></span>
+      <p class="contact-invitation">
+        {{ 'sections.contact.invitationBeforeEmail' | translate }}
+        <a class="contact-email" href="mailto:ashlymazuela@gmail.com">
+          <span>{{ 'sections.contact.emailAddress' | translate }}</span>
+        </a>
+        {{ 'sections.contact.invitationAfterEmail' | translate }}
+      </p>
+      <span class="contact-logo" aria-hidden="true"></span>
       <p class="contact-availability">{{ 'sections.contact.availability' | translate }}</p>
     </aside>
   </div>

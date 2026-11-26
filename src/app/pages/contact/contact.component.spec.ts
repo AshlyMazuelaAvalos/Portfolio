@@ -40,4 +40,13 @@ describe('ContactComponent', () => {
     expect(component.submitAttempted()).toBe(false);
     expect(component.emailSent()).toBe(false);
   });
+
+  it('renders the logo and the email as a mailto link', () => {
+    const logo = fixture.nativeElement.querySelector('.contact-logo') as HTMLElement;
+    const email = fixture.nativeElement.querySelector('.contact-email') as HTMLAnchorElement;
+
+    expect(logo.tagName.toLowerCase()).toBe('span');
+    expect(email.getAttribute('href')).toBe('mailto:ashlymazuela@gmail.com');
+    expect(email.querySelector('span')).not.toBeNull();
+  });
 });

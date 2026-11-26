@@ -212,11 +212,22 @@
 .contact-logo {
   display: block;
   width: min(45vw, 18rem);
-  aspect-ratio: 1 / 1;
-  background-color: var(--btn-primary-bg);
-  -webkit-mask: url('/assets/icons/favicon.svg') center / contain no-repeat;
-  mask: url('/assets/icons/favicon.svg') center / contain no-repeat;
-  filter: drop-shadow(0 0 1.5rem color-mix(in srgb, var(--btn-primary-bg) 35%, transparent));
+  aspect-ratio: 61 / 42;
+  background-color: var(--chip-bg);
+  -webkit-mask: url('../../../assets/icons/favicon.svg') center / contain no-repeat;
+  mask: url('../../../assets/icons/favicon.svg') center / contain no-repeat;
+  filter: drop-shadow(0 0 1.5rem color-mix(in srgb, var(--chip-bg) 35%, transparent));
+}
+
+.contact-email {
+  color: var(--btn-primary-bg);
+  text-decoration-color: var(--btn-primary-bg);
+  text-underline-offset: 4px;
+}
+
+.contact-email:focus-visible {
+  outline: 2px solid var(--btn-primary-bg);
+  outline-offset: 4px;
 }
 
 .contact-links {

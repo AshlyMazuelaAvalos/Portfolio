@@ -82,6 +82,7 @@
   --color-slate-100: #f4f6f8; /* [INTACTO] Canvas Light Colorblind */
   --color-slate-200: #e0e5ec; /* [INTACTO] Text Primary Dark Colorblind */
   --color-periwinkle-transparent: #8da0cb44; /* [INTACTO] Línea principal Colorblind */
+  --color-periwinkle-transparent-05: #8da0cb8c; /* [INTACTO] Línea principal Colorblind */
   --color-purple-transparent-02: #88419d13;
   --color-purple-transparent-63: #88419da1;
 }
