@@ -15,7 +15,7 @@
 }
 .span-text {
   @apply font-bold;
-  color: var(--chip-bg);
+  color: var(--btn-primary-bg);
 }
 .section-heading h2 {
   @apply m-0 text-3xl leading-tight sm:text-4xl;

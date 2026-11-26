@@ -70,7 +70,7 @@
   overflow: hidden;
   border-bottom: 2px solid var(--color-navy-dark);
   border-radius: 0.375rem 0.375rem 0 0;
-  background-color: #9da5bd;
+  background-color: var(--input);
   color: var(--color-black-night);
 }
 
@@ -210,8 +210,12 @@
 }
 
 .contact-logo {
+  display: block;
   width: min(45vw, 18rem);
-  height: auto;
+  aspect-ratio: 1 / 1;
+  background-color: var(--btn-primary-bg);
+  -webkit-mask: url('/assets/icons/favicon.svg') center / contain no-repeat;
+  mask: url('/assets/icons/favicon.svg') center / contain no-repeat;
   filter: drop-shadow(0 0 1.5rem color-mix(in srgb, var(--btn-primary-bg) 35%, transparent));
 }
 

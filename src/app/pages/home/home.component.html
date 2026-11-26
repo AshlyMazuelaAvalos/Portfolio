@@ -1,27 +1,14 @@
 <main class="home-page">
   <section id="hero" class="hero">
-    <img
-      class="hero-poster"
-      ngSrc="assets/images/videos/Homebg-poster.jpg"
-      alt=""
-      fill
-      priority
-      sizes="100vw"
+    <div
+      class="hero-atmosphere"
+      [class.is-paused]="!isPageVisible()"
       aria-hidden="true"
-    />
-    <video
-      class="hero-video"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
-      poster="assets/images/videos/Homebg-poster.jpg"
-      aria-hidden="true"
-      tabindex="-1"
     >
-      <source src="assets/images/videos/Homebg.webm" type="video/webm" />
-    </video>
+      <span class="hero-silk-layer hero-silk-glow"></span>
+      <span class="hero-silk-layer hero-silk-folds"></span>
+      <span class="hero-silk-layer hero-silk-depth"></span>
+    </div>
     <div class="hero-overlay" aria-hidden="true"></div>
 
     <div class="hero-copy">
@@ -37,7 +24,7 @@
           <div class="home-carousel-group flex w-max shrink-0 items-center gap-3 px-1.5">
             @for (item of carouselItems; track item) {
               <span
-                class="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-[#f4f5f9] sm:text-sm"
+                class="carousel-item rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide sm:text-sm bg-gradient-to-b from-[var(--hero-carousel-text)] to-[var(--color-purple-accessible)] bg-clip-text text-transparent"
                 role="listitem"
               >
                 {{ item | translate }}
@@ -50,7 +37,7 @@
           >
             @for (item of carouselItems; track item) {
               <span
-                class="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-[#f4f5f9] sm:text-sm"
+                class="carousel-item rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide sm:text-sm bg-gradient-to-b from-[var(--hero-carousel-text)] to-[var(--color-purple-accessible)] bg-clip-text text-transparent"
               >
                 {{ item | translate }}
               </span>

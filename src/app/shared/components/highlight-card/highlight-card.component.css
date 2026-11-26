@@ -8,8 +8,8 @@
 
 .card-number {
   @apply inline-flex min-h-10 min-w-10 items-center justify-center rounded-full px-2 text-sm font-bold;
-  background: color-mix(in srgb, var(--chip-bg), transparent 82%);
-  color: var(--chip-bg);
+  background: var(--color-indigo-transparent);
+  color: var(--card-highligh);
 }
 
 .highlight-card h3 {

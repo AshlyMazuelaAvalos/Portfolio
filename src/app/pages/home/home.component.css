@@ -5,60 +5,55 @@
 }
 
 .hero {
-  @apply relative grid place-items-center overflow-hidden isolate text-center text-[#f4f5f9];
+  @apply relative grid place-items-center overflow-hidden isolate text-center;
   grid-template-columns: minmax(0, 1fr);
   min-height: max(500px, calc(110svh - 68px));
-  background: var(--color-slate-900);
+  background: var(--bg-canvas);
   scroll-margin-top: 68px;
-}
-
-.hero-poster {
-  @apply absolute inset-0 z-0 h-full w-full object-cover pointer-events-none opacity-[0.68];
-  object-position: center 46%;
-}
-
-.hero-video {
-  @apply absolute inset-0 z-0 h-full w-full object-cover pointer-events-none opacity-[0.68] motion-reduce:hidden;
-  object-position: center 46%;
+  color: var(--text-primary);
 }
 
 .hero-overlay {
   @apply absolute inset-0 z-[1] h-full w-full pointer-events-none;
-  background:
-    linear-gradient(180deg, rgba(8, 8, 12, 0.2), rgba(8, 8, 12, 0.35)),
-    radial-gradient(ellipse at center, rgba(9, 9, 13, 0.12), rgba(9, 9, 13, 0.42));
 }
 
 .hero-copy {
   @apply relative z-[2] mt-24 pb-20 sm:pb-24;
   width: min(760px, calc(100% - 2.5rem));
   min-width: 0;
+  color: var(--text-primary);
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
 
   & h1 {
     @apply m-0 leading-[1.2] tracking-normal;
-    font-size: clamp(1.9rem, 4vw, 3rem);
+    color: inherit;
   }
 
   & h2 {
-    @apply mt-[0.35rem] mb-[1.7rem] text-[#e0e5ec] leading-[1.4];
-    font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+    @apply mt-[0.35rem] mb-[1.7rem] leading-[1.4];
+    color: inherit;
   }
 }
 
 .description {
-  @apply mx-auto max-w-[560px] text-[#e0e5ec] leading-[1.65];
+  @apply mx-auto max-w-[560px] leading-[1.65];
   font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: inherit;
 }
 
 .home-carousel {
   width: 100vw;
   margin: 1.5rem calc(50% - 50vw);
   padding-inline: 1rem;
+  color: inherit;
 }
 
 .home-carousel-track {
   animation: home-carousel-scroll 28s linear infinite;
+  color: inherit;
+}
+.carousel-item {
+  border: 1px solid var(--btn-secondary-bg);
 }
 
 .actions {
