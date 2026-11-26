@@ -22,12 +22,12 @@
   --border-subtle: var(--color-indigo-subtle);
   --chip-bg: var(--color-purple-transparent-63);
   --chip-border: var(--color-periwinkle);
-  --chip-text: var(--color-slate-900);
+  --chip-text: var(--color-slate-100);
   --color-error: var(--color-red-error);
   --card-bg: var(--color-navy-dark);
   --card-text: var(--color-slate-300);
   --card-highligh: var(--color-purple-transparent-63);
-  --input: var(--color-periwinkle-transparent);
+  --input: var(--color-periwinkle-transparent-05);
   --link-decoration: underline;
 }
 
