@@ -1,4 +1,13 @@
 [data-theme='light'] {
+  --hero-silk-base: var(--color-slate-50);
+  --hero-silk-plum: var(--color-mauve-primary);
+  --hero-silk-mauve: var(--color-lavender-soft);
+  --hero-silk-lavender: var(--color-mauve-transparent);
+  --hero-silk-depth: var(--color-mauve-light);
+  --hero-carousel-text: var(--color-navy-dark);
+  --hero-silk-glow-opacity: 0.26;
+  --hero-silk-fold-opacity: 0.48;
+  --hero-silk-depth-opacity: 0.86;
   --bg-canvas: var(--color-slate-50);
   --bg-surface: var(--color-navy-dark);
   --border-subtle: var(--color-slate-300);
@@ -8,11 +17,14 @@
   --btn-primary-bg: var(--color-mauve-primary);
   --btn-primary-text: var(--color-white);
   --btn-secondary-bg: var(--color-indigo-subtle);
+  --btn-secondary-text: var(--color-navy-dark);
   --border-subtle: var(--color-periwinkle);
-  --chip-bg: var(--color-navy-dark);
+  --chip-bg: var(--color-mauve-transparent);
   --chip-border: var(--color-indigo-subtle);
   --chip-text: var(--color-slate-50);
-  --card-bg: var(--color-indigo-subtle);
+  --card-bg: var(--color-indigo-transparent);
   --card-text: var(--color-slate-900);
+  --card-highligh: var(--color-mauve-secondary);
+  --input: var(--color-indigo-subtle);
   --link-decoration: none;
 }

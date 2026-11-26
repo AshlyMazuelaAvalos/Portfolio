@@ -48,35 +48,42 @@
    3. PALETA GLOBAL / TOKENS PRIMITIVOS (Paul Tol "Muted")
    ========================================================================== */
 :root {
-  /* Neutros Absolutos */
   --color-white: #ffffff;
 
   /* Escala de Neutros Claros */
-  --color-slate-50: #f4f5f9; /* Canvas Light */
-  --color-slate-100: #f4f6f8; /* Canvas Light Colorblind */
-  --color-slate-200: #e0e5ec; /* Text Primary Dark Colorblind */
-  --color-slate-300: #d7ddea; /* Border Light / Text Primary Dark */
+  --color-slate-50: #f7f5f8; /* Canvas Light (tinte ciruela ultra sutil para mayor contraste) */
+  --color-slate-300: #dfd8e3; /* Border Light / Text Primary Dark (armonizado) */
 
-  /* Escala Media / Acentos Fríos */
-  --color-indigo-subtle: #949ebb; /* Border/Text Secondary Dark */
-  --color-periwinkle: #8da0cb; /* Línea principal Colorblind */
-  --color-lavender-soft: #a997df; /* Chip background Dark / Accent */
+  /* Escala Media / Acentos */
+  --color-indigo-subtle: #a596ab; /* Border/Text Secondary Dark (gris malva equilibrado) */
+  --color-lavender-soft: #c49cd4; /* Chip background Dark / Accent (orquídea suave) */
 
   /* Escala Neutros Oscuros / Superficies */
-  --color-navy-dark: #2b2c3e; /* Surface / Text Secondary Light */
-  --color-slate-900: #1b1e2b; /* Canvas Dark Colorblind */
-  --color-black-night: #131317; /* Canvas Dark / Text Primary Light */
+  --color-navy-dark: #29232d; /* Surface / Text Secondary Light (pizarra ciruela oscuro) */
+  --color-black-night: #141116; /* Canvas Dark / Text Primary Light (negro carbón cálido) */
 
   /* Colores de Acción / Estados */
-  --color-mauve-primary: #8e6b73; /* Primary Button Estándar */
-  --color-purple-accessible: #88419d; /* Primary Button Colorblind */
-  --color-red-error: #e5323b; /* Error State */
+  --color-mauve-primary: #804c69; /* Nuevo Primary Color Estándar */
+  --color-mauve-secondary: #803a60; /* Nuevo Primary Color Estándar */
+  --color-mauve-light: #c48aa9; /* Recomendado: Primary para texto/iconos en Dark Mode */
+  --color-red-error: #e12d4b; /* Error State (rojo frambuesa armonizado) */
 
   /* Variantes con Opacidad */
-  --color-navy-dark-transparent: #2b2c3ecc;
-  --color-indigo-transparent: #949ebb4d;
-  --color-mauve-transparent: #8e6b73b3;
+  --color-navy-dark-transparent: #29232dcc; /* Actualizado al nuevo surface */
+  --color-indigo-transparent: #a596ab4d; /* Actualizado al nuevo border/secondary */
+  --color-mauve-transparent: #804c69b3; /* Actualizado al nuevo primario (70% opacidad) */
+  --color-mauveL-transparent: #c48aa9b3;
   --color-navy-bar-transparent: #d9d9d908;
+
+  --color-purple-accessible: #88419d; /* [INTACTO] Primary Button Colorblind */
+  --color-periwinkle: #8da0cb; /* [INTACTO] Línea principal Colorblind */
+  --color-periwinkle-light: #a4b9eb; /* [INTACTO] Línea principal Colorblind */
+  --color-slate-900: #1b1e2b; /* Canvas Dark Colorblind */
+  --color-slate-100: #f4f6f8; /* [INTACTO] Canvas Light Colorblind */
+  --color-slate-200: #e0e5ec; /* [INTACTO] Text Primary Dark Colorblind */
+  --color-periwinkle-transparent: #8da0cb44; /* [INTACTO] Línea principal Colorblind */
+  --color-purple-transparent-02: #88419d13;
+  --color-purple-transparent-63: #88419da1;
 }
 
 /* ==========================================================================
@@ -123,7 +130,7 @@ h1,
 .text-heading {
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 2.25rem; /* ~36px Desktop */
+  font-size: 4rem;
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
@@ -132,7 +139,7 @@ h2,
 .text-title-1 {
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 1.75rem; /* ~28px */
+  font-size: 1.55rem; /* ~28px */
   line-height: 1.2;
 }
 
@@ -183,6 +190,140 @@ a:hover,
   opacity: 0.85;
 }
 
+.hero-atmosphere {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--hero-silk-base, var(--bg-canvas, var(--color-slate-50)));
+}
+
+.hero-silk-layer {
+  position: absolute;
+  inset: -35%;
+  transform-origin: center;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.hero-silk-glow {
+  background:
+    radial-gradient(
+      ellipse 42% 25% at 24% 34%,
+      var(--hero-silk-plum, var(--color-mauve-primary)),
+      transparent 74%
+    ),
+    radial-gradient(
+      ellipse 38% 27% at 76% 65%,
+      var(--hero-silk-lavender, var(--color-lavender-soft)),
+      transparent 76%
+    ),
+    radial-gradient(
+      ellipse 34% 20% at 52% 48%,
+      var(--hero-silk-mauve, var(--color-mauve-light)),
+      transparent 72%
+    );
+  filter: blur(40px);
+  opacity: var(--hero-silk-glow-opacity, 0.25);
+  transform: translate3d(-2%, 0, 0) rotate(0deg) scale(1.06);
+  animation: hero-silk-flow 32s linear infinite;
+}
+
+.hero-silk-folds {
+  background:
+    linear-gradient(
+      116deg,
+      transparent 27%,
+      var(--hero-silk-mauve, var(--color-mauve-light)) 40%,
+      transparent 48%,
+      var(--hero-silk-lavender, var(--color-lavender-soft)) 58%,
+      transparent 69%
+    ),
+    linear-gradient(
+      28deg,
+      transparent 34%,
+      var(--hero-silk-plum, var(--color-mauve-primary)) 47%,
+      transparent 59%
+    );
+  filter: blur(30px);
+  opacity: var(--hero-silk-fold-opacity, 0.18);
+  transform: translate3d(2%, 0, 0) rotate(0deg) scale(1.08);
+  animation: hero-silk-flow-reverse 29s linear infinite;
+}
+
+.hero-silk-depth {
+  background:
+    radial-gradient(
+      ellipse 39% 29% at 66% 38%,
+      var(--hero-silk-depth, var(--color-navy-dark)),
+      transparent 76%
+    ),
+    radial-gradient(
+      ellipse 32% 24% at 30% 70%,
+      var(--hero-silk-plum, var(--color-mauve-primary)),
+      transparent 78%
+    );
+  filter: blur(52px);
+  opacity: var(--hero-silk-depth-opacity, 0.2);
+  transform: translate3d(1%, -1%, 0) rotate(0deg) scale(1.1);
+  animation: hero-silk-flow 35s linear infinite reverse;
+}
+
+.hero-atmosphere.is-paused .hero-silk-layer {
+  animation-play-state: paused;
+}
+
+@keyframes hero-silk-flow {
+  0% {
+    transform: translate3d(-2%, 0, 0) rotate(0deg) scale(1.06);
+  }
+
+  25% {
+    transform: translate3d(1%, -2%, 0) rotate(90deg) scale(1.12);
+  }
+
+  50% {
+    transform: translate3d(2%, 1%, 0) rotate(180deg) scale(1.08);
+  }
+
+  75% {
+    transform: translate3d(-1%, 2%, 0) rotate(270deg) scale(1.12);
+  }
+
+  100% {
+    transform: translate3d(-2%, 0, 0) rotate(360deg) scale(1.06);
+  }
+}
+
+@keyframes hero-silk-flow-reverse {
+  0% {
+    transform: translate3d(2%, 0, 0) rotate(0deg) scale(1.08);
+  }
+
+  25% {
+    transform: translate3d(-1%, 2%, 0) rotate(-90deg) scale(1.14);
+  }
+
+  50% {
+    transform: translate3d(-2%, -1%, 0) rotate(-180deg) scale(1.08);
+  }
+
+  75% {
+    transform: translate3d(1%, -2%, 0) rotate(-270deg) scale(1.14);
+  }
+
+  100% {
+    transform: translate3d(2%, 0, 0) rotate(-360deg) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-silk-layer {
+    animation: none;
+  }
+}
+
 @media (max-width: 640px) {
   h1,
   .text-heading {
@@ -190,7 +331,7 @@ a:hover,
   }
   h2,
   .text-title-1 {
-    font-size: 1.45rem;
+    font-size: 1.15rem;
   }
   h3,
   .text-title-2 {

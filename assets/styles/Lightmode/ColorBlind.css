@@ -1,5 +1,14 @@
 /* styles/Lightmode/colorblind.css */
 [data-theme='light-colorblind'] {
+  --hero-silk-base: var(--color-slate-100);
+  --hero-silk-plum: var(--color-purple-accessible);
+  --hero-silk-mauve: var(--color-periwinkle);
+  --hero-silk-lavender: var(--color-periwinkle);
+  --hero-silk-depth: var(--color-periwinkle);
+  --hero-carousel-text: var(--color-slate-900);
+  --hero-silk-glow-opacity: 0.85;
+  --hero-silk-fold-opacity: 0.48;
+  --hero-silk-depth-opacity: 0.46;
   --bg-canvas: var(--color-slate-100);
   --bg-surface: var(--color-white);
   --border-subtle: var(--color-indigo-subtle);
@@ -8,14 +17,16 @@
   --text-secondary: var(--color-navy-dark);
   --btn-primary-bg: var(--color-purple-accessible);
   --btn-primary-text: var(--color-white);
-  --btn-secondary-bg: var(--color-navy-dark);
-  --btn-secondary-text: #color-slate-900;
-  --chip-bg: var(--color-navy-dark);
+  --btn-secondary-bg: var(--color-periwinkle-light);
+  --btn-secondary-text: var(--color-slate-900);
+  --chip-bg: var(--color-purple-transparent-63);
   --chip-border: var(--color-periwinkle);
   --chip-text: var(--color-slate-100);
   --color-error: var(--color-red-error);
-  --card-bg: var(--color-periwinkle);
+  --card-bg: var(--color-purple-transparent-02);
   --card-text: var(--color-slate-900);
+  --card-highligh: var(--color-purple-transparent-63);
+  --input: var(--color-periwinkle-transparent);
   --link-decoration: underline;
 }
 
