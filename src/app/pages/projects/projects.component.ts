@@ -37,17 +37,15 @@ export class ProjectsComponent {
       ],
     },
     {
-      imageUrl: 'assets/images/projects/portfolio.png',
-      titleKey: 'sections.projects.projects.portfolio.title',
-      descriptionKey: 'sections.projects.projects.portfolio.description',
-      projectUrl: 'https://github.com/AshlyMazuelaAvalos/Portfolio',
-      designUrl:
-        'https://www.figma.com/design/qWKh9fXTeVbQkYUKafbsI5/Portafolio?node-id=2122-154&t=RmR81A59HU8G0Loa-0',
+      imageUrl: 'assets/images/projects/Modal/modal.png',
+      titleKey: 'sections.projects.projects.modal.title',
+      descriptionKey: 'sections.projects.projects.modal.description',
+      projectUrl: 'https://modal4se.vercel.app',
       technologies: [
         { labelKey: 'labels.figma', iconUrl: 'assets/icons/tech/figma.svg' },
-        { labelKey: 'labels.angular', iconUrl: 'assets/icons/tech/angular.svg' },
-        { labelKey: 'labels.typescript', iconUrl: 'assets/icons/tech/typescript.svg' },
+        { labelKey: 'labels.react', iconUrl: 'assets/icons/tech/react.svg' },
         { labelKey: 'labels.tailwind', iconUrl: 'assets/icons/tech/tailwind.svg' },
+        { labelKey: 'labels.typescript', iconUrl: 'assets/icons/tech/typescript.svg' },
       ],
     },
     {
@@ -68,6 +66,20 @@ export class ProjectsComponent {
       descriptionKey: 'sections.projects.projects.elizasmemories.description',
       projectUrl: 'https://github.com/AshlyMazuelaAvalos/ElizasMemories',
       technologies: [{ labelKey: 'RPG Maker MZ' }, { labelKey: 'labels.education' }],
+    },
+    {
+      imageUrl: 'assets/images/projects/portfolio.png',
+      titleKey: 'sections.projects.projects.portfolio.title',
+      descriptionKey: 'sections.projects.projects.portfolio.description',
+      projectUrl: 'https://github.com/AshlyMazuelaAvalos/Portfolio',
+      designUrl:
+        'https://www.figma.com/design/qWKh9fXTeVbQkYUKafbsI5/Portafolio?node-id=2122-154&t=RmR81A59HU8G0Loa-0',
+      technologies: [
+        { labelKey: 'labels.figma', iconUrl: 'assets/icons/tech/figma.svg' },
+        { labelKey: 'labels.angular', iconUrl: 'assets/icons/tech/angular.svg' },
+        { labelKey: 'labels.typescript', iconUrl: 'assets/icons/tech/typescript.svg' },
+        { labelKey: 'labels.tailwind', iconUrl: 'assets/icons/tech/tailwind.svg' },
+      ],
     },
     /*{
       imageUrl: 'assets/images/projects/AIAlpha/IAAlphapage.png',
